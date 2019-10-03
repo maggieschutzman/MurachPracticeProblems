@@ -193,11 +193,37 @@ namespace ConsoleApp2 {
 
 
 
+            //Table of Powers
+
+            //Console.WriteLine("Welcome to the Squares and Cubes Table \n Enter an Integer: ");
+            //int userN = Convert.ToInt32(Console.ReadLine());
+            ////Console.WriteLine("\nSquared:\n");
+            //for (int power = 0; userN <= power; userN++)
+            //    Console.WriteLine("{0}^{1} = {2:N0} (0x{2:X})", userN, power, (long)Math.Pow(userN, power));
+            //Console.WriteLine("\nCubed:\n");
+            //for (int cube = 3; cube <= userN; userN++)
+            //    Console.WriteLine("{0}^{1} = {2:N0} (0x{2:X})", userN, cube, (long)Math.Pow(userN, cube));
 
 
 
+            //Factorial Calculator
 
-            }
+            //Console.WriteLine("Welcome to the Factorial Cacluator\n\nEnter an interger that's greater than 0 and less than 10: ");
+            //int fact = Convert.ToInt32(Console.ReadLine());
+            //for (int i = fact - 1; i >= 1; i--) {
+            //    fact = fact * i;               
+            //}
+            //Console.WriteLine($"The factorial  {fact}");
+
+
+            //Tip Calculator
+
+
+            
+            
+
+
         }
     }
+}
 
