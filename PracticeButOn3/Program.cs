@@ -218,9 +218,32 @@ namespace ConsoleApp2 {
 
             //Tip Calculator
 
+            //Console.WriteLine("Tip Calculator");
+            //Console.WriteLine("Cost of the meal: ");
+            //decimal cost = Convert.ToDecimal(Console.ReadLine());
 
-            
-            
+            //Console.WriteLine("15%");
+            //decimal tipA = cost * Convert.ToDecimal(.15);
+            //Console.WriteLine("Tip Amount: $"+Math.Round(tipA, 2));
+            //decimal total = Math.Round(cost + tipA, 2);
+            //Console.WriteLine("Total amount: $"+total);
+
+
+            //Console.WriteLine("20%");
+            //decimal tipB = cost * Convert.ToDecimal(.20);
+            //Console.WriteLine("Tip Amount: $"+Math.Round(tipB, 2));
+            //decimal totalB = Math.Round(cost + tipB, 2);
+            //Console.WriteLine("Total amount: $"+totalB);
+
+            //Console.WriteLine("25%");
+            //decimal tipC = cost * Convert.ToDecimal(.25);
+            //Console.WriteLine("Tip Amount: $" + Math.Round(tipC, 2));
+            //decimal totalC = Math.Round(cost + tipC, 2);
+            //Console.WriteLine("Total amount: $"+totalC);
+
+
+
+
 
 
         }
