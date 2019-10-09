@@ -7,10 +7,6 @@ namespace PracticeButOn3 {
 
         public string cont { get; set; }
 
-        public bool go { get; set; }
-
-
-
 
         public Validations(string cont) {
             this.cont = cont;
