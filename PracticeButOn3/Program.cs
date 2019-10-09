@@ -268,39 +268,20 @@ namespace ConsoleApp2 {
 
 
             // Guessing Game
-
+            
+            var games = new Games();
             Console.WriteLine("Welcome to the Guess the Number Game");
             Console.WriteLine("Would you like to try it out? y/n");
-            string c = Console.ReadLine();
-            if (c == "y") {
-                Console.WriteLine("I'm thinking of a number from 1 to 100 \nTry to guess it!");
+            string cont = Console.ReadLine();
+            new Validations(cont);
+            
+            Console.WriteLine("I'm thinking of a number from 1 to 100 \nTry to guess it!");
                 int guess = Convert.ToInt32(Console.ReadLine());
-                int sf = GetRandomNumber();
-                do {
-                    if (guess > sf) {
-                        Console.WriteLine("Too high! Try again");
-                        guess = Convert.ToInt32(Console.ReadLine());
-                    }
-                    if (guess < sf) {
-                        Console.WriteLine("Too low! Try again");
-                        guess = Convert.ToInt32(Console.ReadLine());
-                    }
-                    if (guess == sf) {
-                        Console.WriteLine($"You got it.\nGreat Work! You're a mathematical wizard!");
-                    }
-                }
-                while (guess != sf);
-            }
+                int rando = Games.getRandomNumber();
+                games.evaluateGuess(guess, rando);
             Console.WriteLine("Try again? y/n");
-            c = Console.ReadLine();
-            if (c == "n") {
-                Console.WriteLine("Bye - Come back soon!");
-            }
-        }
-        public static int GetRandomNumber() {
-            Random random = new Random();
-            int rnd = random.Next(101);
-            return rnd;
+            cont = Console.ReadLine();
+            
         }
 
 
@@ -344,16 +325,9 @@ namespace ConsoleApp2 {
         //catch (Exception e) {Console.WriteLine(e.Message);
         //}
 
-
-
-
-
-
-
-
-    }
     }
 }
+
 
 
 
