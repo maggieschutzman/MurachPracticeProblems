@@ -4,6 +4,7 @@ using System.Text;
 
 namespace PracticeButOn3 {
     public class Contacts {
+
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string email { get; set; }
@@ -42,9 +43,6 @@ namespace PracticeButOn3 {
         public string getPhone() {
             return ("Phone: "+phone+" | ");
         }
-
-        
-    
 
         public string displayContact() {
             return ("Current Contact \n\n")+getFirstName() + getLastName() + getEmail() + getPhone();

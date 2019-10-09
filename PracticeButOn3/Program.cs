@@ -10,11 +10,9 @@ namespace ConsoleApp2 {
 
             //    Console.WriteLine("Student Registration Form");
             //    try {
-
             //        Console.WriteLine("Enter first name: ");
             //        string x = Console.ReadLine();
             //        bool fill = string.IsNullOrWhiteSpace(x);
-
             //        if (fill == true) 
             //            throw new Exception("Please enter a name");
 
@@ -38,61 +36,6 @@ namespace ConsoleApp2 {
             //    }
             //}
 
-
-            //Grade Converter 
-
-            //Console.WriteLine("Enter numerical grade: ");
-            //string a = Console.ReadLine();
-            //int b = Convert.ToInt32(a);
-            //if (b >= 88 && b <= 100) {
-            //    Console.WriteLine("You entered {0}", b + ", which is an A!");
-            //}
-            //if (b >= 80 && b <= 87) {
-            //    Console.WriteLine("You entered {0}", b + ", which is a B!");
-            //}
-            //if (b >= 67 && b <= 79) {
-            //    Console.WriteLine("You entered {0}", b + ", which is a C!");
-            //}
-            //if (b >= 60 && b <= 67) {
-            //    Console.WriteLine("You entered {0}", b + ", which is a D!"); }
-
-            //if (b <= 60) {
-            //    Console.WriteLine("You entered {0}", b + ", which is an F D:");
-            //        }
-
-
-            //Grade Converter 
-            //try {
-            //    Console.WriteLine("Would you like to Begin?(y/n)");
-            //    string c = Console.ReadLine();
-
-            //    if (c == "y") {
-            //        Console.WriteLine("Enter numerical grade: ");
-            //    }
-            //    else { Console.WriteLine("Fine");}
-
-            //    int b = Convert.ToInt32(Console.ReadLine());
-            //    if (b > 100) throw new Exception("You must enter a grade below %100");
-            //    if (b >= 88 && b <= 100) {
-            //        Console.WriteLine("You entered {0}", b + ", which is an A!");
-            //    }
-            //    if (b >= 80 && b <= 87) {
-            //        Console.WriteLine("You entered {0}", b + ", which is a B!");
-            //    }
-            //    if (b >= 67 && b <= 79) {
-            //        Console.WriteLine("You entered {0}", b + ", which is a C!");
-            //    }
-            //    if (b >= 60 && b <= 67) {
-            //        Console.WriteLine("You entered {0}", b + ", which is a D!");
-            //    }
-            //    if (b <= 60) {
-            //        Console.WriteLine("You entered {0}", b + ", which is an F D:");
-            //    }
-            //    Console.WriteLine("Would you like to Continue? (y/n)");
-            //    c = Console.ReadLine();
-            //}
-            //catch (Exception e) {Console.WriteLine(e.Message);
-            //}
 
             //Rectangle Calculator
 
@@ -123,6 +66,7 @@ namespace ConsoleApp2 {
             //       }
             //               catch (Exception e) {Console.WriteLine(e.Message);
             //}
+
 
             //Temperature Converter
 
@@ -232,7 +176,6 @@ namespace ConsoleApp2 {
             //}
 
 
-
             //Table of Powers
 
             //Console.WriteLine("Welcome to the Squares and Cubes Table \n Enter an Integer: ");
@@ -254,7 +197,6 @@ namespace ConsoleApp2 {
             //    fact = fact * i;               
             //}
             //Console.WriteLine($"The factorial  {fact}");
-
 
 
             //Tip Calculator
@@ -283,7 +225,6 @@ namespace ConsoleApp2 {
             //Console.WriteLine("Total amount: $"+totalC);
 
 
-
             //Dice Roller
 
             //Console.WriteLine("Dice Roller");
@@ -300,7 +241,6 @@ namespace ConsoleApp2 {
             //    Console.WriteLine("Roll again?");
             //    ans = Console.ReadLine();
             //}
-
 
 
             //Rectangle Calculator
@@ -327,67 +267,91 @@ namespace ConsoleApp2 {
             //    }
 
 
-
             // Guessing Game
 
-            //    Console.WriteLine("Welcome to the Guess the Number Game");
-            //    Console.WriteLine("Would you like to try it out? y/n");
-            //    string c = Console.ReadLine();
-            //    if (c == "y") {
-            //        Console.WriteLine("I'm thinking of a number from 1 to 100 \nTry to guess it!");               
-            //            int guess = Convert.ToInt32(Console.ReadLine());
-            //            int sf = GetRandomNumber();
-            //        do {
-            //            if (guess > sf) {
-            //                Console.WriteLine("Too high! Try again");
-            //                guess = Convert.ToInt32(Console.ReadLine());
-            //            }
-            //            if (guess < sf) {
-            //                Console.WriteLine("Too low! Try again");
-            //                guess = Convert.ToInt32(Console.ReadLine());
-            //            }
-            //            if (guess == sf) {
-            //                Console.WriteLine($"You got it.\nGreat Work! You're a mathematical wizard!");
-            //            }
-            //        } 
-            //        while (guess != sf);
-            //    }
-            //    Console.WriteLine("Try again? y/n");
-            //    c = Console.ReadLine();
-            //    if (c == "n") {
-            //        Console.WriteLine("Bye - Come back soon!");
-            //    }
-            //}
-            //public static int GetRandomNumber() {
-            //    Random random = new Random();
-            //    int rnd = random.Next(101);
-            //    return rnd;
-            //}
-
-
-            // Contact List
-            //var contact = new Contacts();
-
-            //Console.WriteLine("Welcome to the Contact list application");
-            //Console.WriteLine("Enter first name: ");
-            //string firstName = Console.ReadLine();
-            //contact.setFristName(firstName);
-
-            //Console.WriteLine("Enter last name: ");
-            //string lastName = Console.ReadLine();
-            //contact.setLastName(lastName);
-
-            //Console.WriteLine("Enter email: ");
-            //string eMail = Console.ReadLine();
-            //contact.setEmail(eMail);
-
-            //Console.WriteLine("Enter phone: ");
-            //string phone = Console.ReadLine();
-            //contact.setPhone(phone);
-
-            //string newContact = contact.displayContact();
-            //Console.WriteLine(newContact);
+            Console.WriteLine("Welcome to the Guess the Number Game");
+            Console.WriteLine("Would you like to try it out? y/n");
+            string c = Console.ReadLine();
+            if (c == "y") {
+                Console.WriteLine("I'm thinking of a number from 1 to 100 \nTry to guess it!");
+                int guess = Convert.ToInt32(Console.ReadLine());
+                int sf = GetRandomNumber();
+                do {
+                    if (guess > sf) {
+                        Console.WriteLine("Too high! Try again");
+                        guess = Convert.ToInt32(Console.ReadLine());
+                    }
+                    if (guess < sf) {
+                        Console.WriteLine("Too low! Try again");
+                        guess = Convert.ToInt32(Console.ReadLine());
+                    }
+                    if (guess == sf) {
+                        Console.WriteLine($"You got it.\nGreat Work! You're a mathematical wizard!");
+                    }
+                }
+                while (guess != sf);
+            }
+            Console.WriteLine("Try again? y/n");
+            c = Console.ReadLine();
+            if (c == "n") {
+                Console.WriteLine("Bye - Come back soon!");
+            }
         }
+        public static int GetRandomNumber() {
+            Random random = new Random();
+            int rnd = random.Next(101);
+            return rnd;
+        }
+
+
+        // Contact List
+
+        //var contact = new Contacts();
+
+        //Console.WriteLine("Welcome to the Contact list application");
+        //Console.WriteLine("Enter first name: ");
+        //string firstName = Console.ReadLine();
+        //contact.setFristName(firstName);
+
+        //Console.WriteLine("Enter last name: ");
+        //string lastName = Console.ReadLine();
+        //contact.setLastName(lastName);
+
+        //Console.WriteLine("Enter email: ");
+        //string eMail = Console.ReadLine();
+        //contact.setEmail(eMail);
+
+        //Console.WriteLine("Enter phone: ");
+        //string phone = Console.ReadLine();
+        //contact.setPhone(phone);
+
+        //string newContact = contact.displayContact();
+        //Console.WriteLine(newContact);
+
+
+        //Grade Converter
+
+        //try {
+        //    var grades = new Grades();
+        //    Console.WriteLine("Welcome to the grade converter!");
+        //    Console.WriteLine("Enter numerical grade: ");
+        //    int numgrade = Convert.ToInt32(Console.ReadLine());
+        //    if (numgrade > 100) throw new Exception("You must enter a grade below %100");
+        //    grades.setNumber(numgrade);
+        //    Console.WriteLine("Letter grade: " + grades.getLetter(numgrade));
+        //}
+
+        //catch (Exception e) {Console.WriteLine(e.Message);
+        //}
+
+
+
+
+
+
+
+
+    }
     }
 }
 
