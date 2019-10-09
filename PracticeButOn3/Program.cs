@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PracticeButOn3;
+using System;
 
 
 namespace ConsoleApp2 {
@@ -300,7 +301,7 @@ namespace ConsoleApp2 {
             //    ans = Console.ReadLine();
             //}
 
-            
+
 
             //Rectangle Calculator
 
@@ -329,45 +330,66 @@ namespace ConsoleApp2 {
 
             // Guessing Game
 
-        //    Console.WriteLine("Welcome to the Guess the Number Game");
-        //    Console.WriteLine("Would you like to try it out? y/n");
-        //    string c = Console.ReadLine();
-        //    if (c == "y") {
-        //        Console.WriteLine("I'm thinking of a number from 1 to 100 \nTry to guess it!");               
-        //            int guess = Convert.ToInt32(Console.ReadLine());
-        //            int sf = GetRandomNumber();
-        //        do {
-        //            if (guess > sf) {
-        //                Console.WriteLine("Too high! Try again");
-        //                guess = Convert.ToInt32(Console.ReadLine());
-        //            }
-        //            if (guess < sf) {
-        //                Console.WriteLine("Too low! Try again");
-        //                guess = Convert.ToInt32(Console.ReadLine());
-        //            }
-        //            if (guess == sf) {
-        //                Console.WriteLine($"You got it.\nGreat Work! You're a mathematical wizard!");
-        //            }
-        //        } 
-        //        while (guess != sf);
-        //    }
-        //    Console.WriteLine("Try again? y/n");
-        //    c = Console.ReadLine();
-        //    if (c == "n") {
-        //        Console.WriteLine("Bye - Come back soon!");
-        //    }
-        //}
-        //public static int GetRandomNumber() {
-        //    Random random = new Random();
-        //    int rnd = random.Next(101);
-        //    return rnd;
-        //}
-        
+            //    Console.WriteLine("Welcome to the Guess the Number Game");
+            //    Console.WriteLine("Would you like to try it out? y/n");
+            //    string c = Console.ReadLine();
+            //    if (c == "y") {
+            //        Console.WriteLine("I'm thinking of a number from 1 to 100 \nTry to guess it!");               
+            //            int guess = Convert.ToInt32(Console.ReadLine());
+            //            int sf = GetRandomNumber();
+            //        do {
+            //            if (guess > sf) {
+            //                Console.WriteLine("Too high! Try again");
+            //                guess = Convert.ToInt32(Console.ReadLine());
+            //            }
+            //            if (guess < sf) {
+            //                Console.WriteLine("Too low! Try again");
+            //                guess = Convert.ToInt32(Console.ReadLine());
+            //            }
+            //            if (guess == sf) {
+            //                Console.WriteLine($"You got it.\nGreat Work! You're a mathematical wizard!");
+            //            }
+            //        } 
+            //        while (guess != sf);
+            //    }
+            //    Console.WriteLine("Try again? y/n");
+            //    c = Console.ReadLine();
+            //    if (c == "n") {
+            //        Console.WriteLine("Bye - Come back soon!");
+            //    }
+            //}
+            //public static int GetRandomNumber() {
+            //    Random random = new Random();
+            //    int rnd = random.Next(101);
+            //    return rnd;
+            //}
 
 
+            // Contact List
+            //var contact = new Contacts();
 
-        }     
+            //Console.WriteLine("Welcome to the Contact list application");
+            //Console.WriteLine("Enter first name: ");
+            //string firstName = Console.ReadLine();
+            //contact.setFristName(firstName);
+
+            //Console.WriteLine("Enter last name: ");
+            //string lastName = Console.ReadLine();
+            //contact.setLastName(lastName);
+
+            //Console.WriteLine("Enter email: ");
+            //string eMail = Console.ReadLine();
+            //contact.setEmail(eMail);
+
+            //Console.WriteLine("Enter phone: ");
+            //string phone = Console.ReadLine();
+            //contact.setPhone(phone);
+
+            //string newContact = contact.displayContact();
+            //Console.WriteLine(newContact);
+        }
     }
+}
 
 
 
