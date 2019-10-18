@@ -12,42 +12,53 @@ namespace PracticeButOn3 {
 
 
 
-        public void setFristName(string firstName) {
-            this.firstName = firstName;
+        public void SetFristName(string firstName) {
+            try {
+                this.firstName = firstName;
+                bool isIntString = int.TryParse(firstName, out int result);
+                if (isIntString == true) throw new Exception("Name can not include letters.");
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
         }
 
-        public string getFirstName() {
-            return ("Firstname: "+firstName + " | ");
+        public string GetFirstName() {
+            return ("Firstname: " + firstName + " | ");
         }
 
-        public void setLastName(string lastName) {
-            this.lastName = lastName;
+        public void SetLastName(string lastName) {
+            try {
+                this.lastName = lastName;
+                bool isIntString = int.TryParse(lastName, out int result);
+                if (isIntString == true) throw new Exception("Name can not include letters.");
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
         }
 
-        public string getLastName() {
-            return ("Lastname: "+lastName + " | ");
+        public string GetLastName() {
+            return ("Lastname: " + lastName + " | ");
         }
 
-        public void setEmail(string email) {
+        public void SetEmail(string email) {
             this.email = email;
         }
 
-        public string getEmail() {
-            return ("Email: "+email+" | ");
+        public string GetEmail() {
+            return ("Email: " + email + " | ");
         }
 
-        public void setPhone(string phone) {
-            this.phone = phone;
+        public void SetPhone(string phone) {          
+                this.phone = phone;                        
         }
 
-        public string getPhone() {
-            return ("Phone: "+phone+" | ");
+        public string GetPhone() {
+            return ("Phone: " + phone + " | ");
         }
 
-        public string displayContact() {
-            return ("Current Contact \n\n")+getFirstName() + getLastName() + getEmail() + getPhone();
-            
+        public string DisplayContact() {
+            return ("Current Contact \n\n") + GetFirstName() + GetLastName() + GetEmail() + GetPhone();
+
 
         }
     }
 }
+

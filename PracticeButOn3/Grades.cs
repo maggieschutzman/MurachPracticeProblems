@@ -7,19 +7,18 @@ namespace PracticeButOn3 {
 
         public int numericalGrade { get; set; }
         public string letterGrade { get; set; }
-        
 
 
-        public void setNumber(int numericalGrade) {
-            this.numericalGrade = numericalGrade;
+
+        public void SetNumber(int numericalGrade) {
+                this.numericalGrade = numericalGrade;
         }
 
-        public int getNumber() {
-            
+        public int GetNumber() {           
             return numericalGrade;
         }
 
-        public string getLetter(int numericalGrade) {
+        public string GetLetter(int numericalGrade) {
             if (this.numericalGrade > 88 && this.numericalGrade < 100) {
                 letterGrade = "A";
             }

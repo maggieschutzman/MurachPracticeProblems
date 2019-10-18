@@ -4,7 +4,7 @@ using System;
 
 namespace ConsoleApp2 {
     class Program {
-        static void Main(string[] args) {
+        static void Main() {
 
             // Registration Form
 
@@ -235,9 +235,9 @@ namespace ConsoleApp2 {
             //    int die1 = dice.Next(1, 7);
             //    int die2 = dice.Next(1, 7);
             //    int total = die1 + die2;
-            //    Console.WriteLine("Die 1: "+die1);
-            //    Console.WriteLine("Die 2: "+die2);
-            //    Console.WriteLine("Total: "+total);
+            //    Console.WriteLine("Die 1: " + die1);
+            //    Console.WriteLine("Die 2: " + die2);
+            //    Console.WriteLine("Total: " + total);
             //    Console.WriteLine("Roll again?");
             //    ans = Console.ReadLine();
             //}
@@ -268,65 +268,94 @@ namespace ConsoleApp2 {
 
 
             // Guessing Game
-            
-            var games = new Games();
-            Console.WriteLine("Welcome to the Guess the Number Game");
-            Console.WriteLine("Would you like to try it out? y/n");
-            string cont = Console.ReadLine();
-            new Validations(cont);
-            
-            Console.WriteLine("I'm thinking of a number from 1 to 100 \nTry to guess it!");
-                int guess = Convert.ToInt32(Console.ReadLine());
-                int rando = Games.getRandomNumber();
-                games.evaluateGuess(guess, rando);
-            Console.WriteLine("Try again? y/n");
-            cont = Console.ReadLine();
-            
+            //    try {
+            //        var games = new Games();
+            //        Console.WriteLine("Would you like to play a game? y/n: ");
+            //        string cont = Console.ReadLine();
+            //        while (cont == "y") {
+            //            Console.WriteLine("Welcome to the Guess the Number Game");
+            //            Console.WriteLine("I'm thinking of a number from 1 to 100 \nTry to guess it!");
+
+            //            int guess = Convert.ToInt32(Console.ReadLine());
+            //            if (guess > 100) throw new Exception("The number must be less than 100!");
+            //            if (guess < 1) throw new Exception("The number must be greater than 1!");
+            //            int rando = Games.getRandomNumber();
+            //            games.evaluateGuess(guess, rando);
+            //            Console.WriteLine("Try again? y/n");
+            //            cont = Console.ReadLine();
+            //        }
+            //    }
+            //    catch (Exception e) {
+            //        Console.WriteLine(e.Message);
+            //    }
+            //}
+
+
+            // Contact List
+
+            //var contact = new Contacts();
+            //Console.WriteLine("Welcome to the Contact list application");
+            //Console.WriteLine("Enter first name: ");
+            //string firstName = Console.ReadLine();
+            //contact.SetFristName(firstName);
+
+            //Console.WriteLine("Enter last name: ");
+            //string lastName = Console.ReadLine();
+            //contact.SetLastName(lastName);
+
+            //Console.WriteLine("Enter email: ");
+            //string eMail = Console.ReadLine();
+            //contact.SetEmail(eMail);
+
+            //Console.WriteLine("Enter phone: ");
+            //string phone = Console.ReadLine();
+            //contact.SetPhone(phone);
+
+            //string newContact = contact.DisplayContact();
+            //Console.WriteLine(newContact);
+
+
+            //Grade Converter
+
+            //try {
+            //    var grades = new Grades();
+            //    Console.WriteLine("Welcome to the grade converter!");
+            //    Console.WriteLine("Enter numerical grade: ");
+            //    int numgrade = Convert.ToInt32(Console.ReadLine());
+            //    if (numgrade > 100) throw new Exception("You must enter a grade below %100");
+            //    grades.setNumber(numgrade);
+            //    Console.WriteLine("Letter grade: " + grades.getLetter(numgrade));
+            //}
+
+            //catch (Exception e) {Console.WriteLine(e.Message);
+            //}
+
+
+            // Number Checker
+            //try {
+            //    Console.WriteLine("Would you like to see if your number is odd or even? y/n");
+            //    string cont = Console.ReadLine();
+            //    while (cont == "y") {
+            //        Console.WriteLine("Welcome to the Odd/Even Checker!");
+            //        Console.WriteLine("Enter an integer: ");
+            //        int ans = Convert.ToInt32(Console.ReadLine());
+            //        if (ans < 1) throw new Exception("Please enter an integer greater than 0");
+            //        int even = ans % 2;
+            //        if (even != 0) { Console.WriteLine($"The number {ans} is odd"); }
+            //        if (even == 0) { Console.WriteLine($"The number {ans} is even"); }
+            //        Console.WriteLine("Again? y/n");
+            //        cont = Console.ReadLine();
+            //    }
+            //}
+            //catch (Exception e) { Console.WriteLine(e.Message); }
+
+
         }
-
-
-        // Contact List
-
-        //var contact = new Contacts();
-
-        //Console.WriteLine("Welcome to the Contact list application");
-        //Console.WriteLine("Enter first name: ");
-        //string firstName = Console.ReadLine();
-        //contact.setFristName(firstName);
-
-        //Console.WriteLine("Enter last name: ");
-        //string lastName = Console.ReadLine();
-        //contact.setLastName(lastName);
-
-        //Console.WriteLine("Enter email: ");
-        //string eMail = Console.ReadLine();
-        //contact.setEmail(eMail);
-
-        //Console.WriteLine("Enter phone: ");
-        //string phone = Console.ReadLine();
-        //contact.setPhone(phone);
-
-        //string newContact = contact.displayContact();
-        //Console.WriteLine(newContact);
-
-
-        //Grade Converter
-
-        //try {
-        //    var grades = new Grades();
-        //    Console.WriteLine("Welcome to the grade converter!");
-        //    Console.WriteLine("Enter numerical grade: ");
-        //    int numgrade = Convert.ToInt32(Console.ReadLine());
-        //    if (numgrade > 100) throw new Exception("You must enter a grade below %100");
-        //    grades.setNumber(numgrade);
-        //    Console.WriteLine("Letter grade: " + grades.getLetter(numgrade));
-        //}
-
-        //catch (Exception e) {Console.WriteLine(e.Message);
-        //}
-
     }
 }
+
+
+
 
 
 
