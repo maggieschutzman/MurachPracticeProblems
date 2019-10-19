@@ -62,7 +62,6 @@ namespace ConsoleApp2 {
             //               Console.WriteLine("Continue? (y/n)");
             //               Console.ReadLine();
             //           }
-
             //       }
             //               catch (Exception e) {Console.WriteLine(e.Message);
             //}
@@ -188,7 +187,6 @@ namespace ConsoleApp2 {
             //    Console.WriteLine("{0}^{1} = {2:N0} (0x{2:X})", userN, cube, (long)Math.Pow(userN, cube));
 
 
-
             //Factorial Calculator
 
             //Console.WriteLine("Welcome to the Factorial Cacluator\n\nEnter an interger that's greater than 0 and less than 10: ");
@@ -210,7 +208,6 @@ namespace ConsoleApp2 {
             //Console.WriteLine("Tip Amount: $"+Math.Round(tipA, 2));
             //decimal total = Math.Round(cost + tipA, 2);
             //Console.WriteLine("Total amount: $"+total);
-
 
             //Console.WriteLine("20%");
             //decimal tipB = cost * Convert.ToDecimal(.20);
@@ -351,32 +348,63 @@ namespace ConsoleApp2 {
 
 
             //Person Manager
-            var customers = new Customers();
-            var employees = new Employees();
+            //var customers = new Customers();
+            //var employees = new Employees();
 
-            Console.WriteLine("Create customer or employee? (c/e): ");
-            string custemp = Console.ReadLine();
-            Console.WriteLine("First name: ");
-            string fn = Console.ReadLine();
-            Console.WriteLine("Last name: ");
-            string ln = Console.ReadLine();
+            //Console.WriteLine("Create customer or employee? (c/e): ");
+            //string custemp = Console.ReadLine();
+            //Console.WriteLine("First name: ");
+            //string fn = Console.ReadLine();
+            //Console.WriteLine("Last name: ");
+            //string ln = Console.ReadLine();
 
-            if (custemp == "c") {
-                customers.SetFirstName(fn);
-                customers.SetLastName(ln);
-                Console.WriteLine("You entered a new customer: \n" + customers.DisplayCustomer()); ;
+            //if (custemp == "c") {
+            //    customers.SetFirstName(fn);
+            //    customers.SetLastName(ln);
+            //    Console.WriteLine("You entered a new customer: \n" + customers.DisplayCustomer()); ;
+            //}
+            //if (custemp == "e") {
+            //    employees.SetFirstName(fn);
+            //    employees.SetLastName(ln);
+            //    Console.WriteLine("Enter ssn: ");
+            //    string ssn = Console.ReadLine();
+            //    employees.SetSsn(ssn);
+            //    Console.WriteLine("You entered a new employee: \n" + employees.DisplayEmployee()); ;
+            //}
 
+
+            //Area Calculator
+            var circles = new Circles();
+            var squares = new Squares();
+            var rectangles = new Rectangles();
+
+            Console.WriteLine("Welcome to the Area Calculator");
+            Console.WriteLine("Calculate the area of a circle, square, or rectangle? (c/s/r)");
+            string csr = Console.ReadLine();
+
+            if (csr == "c") {
+                Console.WriteLine("Enter Radius: ");
+                double rad = Convert.ToDouble(Console.ReadLine());
+                circles.SetRadius(rad);
+                Console.WriteLine("The area of the Circle you entered is " + circles.GetArea()); ;                    
             }
-            if (custemp == "e") {
-                employees.SetFirstName(fn);
-                employees.SetLastName(ln);
-                Console.WriteLine("Enter ssn: ");
-                string ssn = Console.ReadLine();
-                employees.SetSsn(ssn);
-                Console.WriteLine("You entered a new employee: \n" + employees.DisplayEmployee()); ;
+
+            if (csr == "s") {
+                Console.WriteLine("Enter Width: ");
+                double wid = Convert.ToDouble(Console.ReadLine());
+                squares.SetWidth(wid);
+                Console.WriteLine("The area of the Square you entered is " + squares.getArea()); ;
             }
 
-
+            if (csr == "r") {
+                Console.WriteLine("Enter Length: ");
+                double len = Convert.ToDouble(Console.ReadLine());
+                rectangles.SetLength(len);
+                Console.WriteLine("Enter Width: ");
+                double widt = Convert.ToDouble(Console.ReadLine());
+                rectangles.SetLength(widt);
+                Console.WriteLine("The area of the rectangle you entered is " + rectangles.getArea()); ;
+            }
 
         }
     }
