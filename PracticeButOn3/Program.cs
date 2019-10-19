@@ -350,6 +350,34 @@ namespace ConsoleApp2 {
             //catch (Exception e) { Console.WriteLine(e.Message); }
 
 
+            //Person Manager
+            var customers = new Customers();
+            var employees = new Employees();
+
+            Console.WriteLine("Create customer or employee? (c/e): ");
+            string custemp = Console.ReadLine();
+            Console.WriteLine("First name: ");
+            string fn = Console.ReadLine();
+            Console.WriteLine("Last name: ");
+            string ln = Console.ReadLine();
+
+            if (custemp == "c") {
+                customers.SetFirstName(fn);
+                customers.SetLastName(ln);
+                Console.WriteLine("You entered a new customer: \n" + customers.DisplayCustomer()); ;
+
+            }
+            if (custemp == "e") {
+                employees.SetFirstName(fn);
+                employees.SetLastName(ln);
+                Console.WriteLine("Enter ssn: ");
+                string ssn = Console.ReadLine();
+                employees.SetSsn(ssn);
+                Console.WriteLine("You entered a new employee: \n" + employees.DisplayEmployee()); ;
+            }
+
+
+
         }
     }
 }
