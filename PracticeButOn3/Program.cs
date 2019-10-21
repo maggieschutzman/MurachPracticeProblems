@@ -1,6 +1,6 @@
 ﻿using PracticeButOn3;
+using PracticeButOn3.AnimalCounter;
 using System;
-
 
 namespace ConsoleApp2 {
     class Program {
@@ -374,37 +374,43 @@ namespace ConsoleApp2 {
 
 
             //Area Calculator
-            var circles = new Circles();
-            var squares = new Squares();
-            var rectangles = new Rectangles();
+            //var circles = new Circles();
+            //var squares = new Squares();
+            //var rectangles = new Rectangles();
 
-            Console.WriteLine("Welcome to the Area Calculator");
-            Console.WriteLine("Calculate the area of a circle, square, or rectangle? (c/s/r)");
-            string csr = Console.ReadLine();
+            //Console.WriteLine("Welcome to the Area Calculator");
+            //Console.WriteLine("Calculate the area of a circle, square, or rectangle? (c/s/r)");
+            //string csr = Console.ReadLine();
 
-            if (csr == "c") {
-                Console.WriteLine("Enter Radius: ");
-                double rad = Convert.ToDouble(Console.ReadLine());
-                circles.SetRadius(rad);
-                Console.WriteLine("The area of the Circle you entered is " + circles.GetArea()); ;                    
-            }
+            //if (csr == "c") {
+            //    Console.WriteLine("Enter Radius: ");
+            //    double rad = Convert.ToDouble(Console.ReadLine());
+            //    circles.SetRadius(rad);
+            //    Console.WriteLine("The area of the Circle you entered is " + circles.GetArea()); ;                    
+            //}
 
-            if (csr == "s") {
-                Console.WriteLine("Enter Width: ");
-                double wid = Convert.ToDouble(Console.ReadLine());
-                squares.SetWidth(wid);
-                Console.WriteLine("The area of the Square you entered is " + squares.getArea()); ;
-            }
+            //if (csr == "s") {
+            //    Console.WriteLine("Enter Width: ");
+            //    double wid = Convert.ToDouble(Console.ReadLine());
+            //    squares.SetWidth(wid);
+            //    Console.WriteLine("The area of the Square you entered is " + squares.getArea()); ;
+            //}
 
-            if (csr == "r") {
-                Console.WriteLine("Enter Length: ");
-                double len = Convert.ToDouble(Console.ReadLine());
-                rectangles.SetLength(len);
-                Console.WriteLine("Enter Width: ");
-                double widt = Convert.ToDouble(Console.ReadLine());
-                rectangles.SetLength(widt);
-                Console.WriteLine("The area of the rectangle you entered is " + rectangles.getArea()); ;
-            }
+            //if (csr == "r") {
+            //    Console.WriteLine("Enter Length: ");
+            //    double len = Convert.ToDouble(Console.ReadLine());
+            //    rectangles.SetLength(len);
+            //    Console.WriteLine("Enter Width: ");
+            //    double widt = Convert.ToDouble(Console.ReadLine());
+            //    rectangles.SetLength(widt);
+            //    Console.WriteLine("The area of the rectangle you entered is " + rectangles.getArea()); ;
+            //}
+
+
+            //Animal Counter
+
+            
+
 
         }
     }
