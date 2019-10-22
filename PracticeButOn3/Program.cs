@@ -1,5 +1,5 @@
 ﻿using PracticeButOn3;
-using PracticeButOn3.AnimalCounter;
+using PracticeButOn3.AccountBalance;
 using System;
 
 namespace ConsoleApp2 {
@@ -407,9 +407,33 @@ namespace ConsoleApp2 {
             //}
 
 
-            //Animal Counter
+            //Account Balance Calculator
+            Console.WriteLine("Welcome to the Account application");
+            Account a1 = new Account();
+            a1.CustFN = "Maggie";
+            a1.CustFN = "Schutzman";
+            a1.Name = "Checking";
+            a1.Balance = 1000;
+            a1.MonthlyFee = 1;
+            Console.WriteLine("Starting Balances\nChecking: $" + a1.GetBalance()); ;
 
-            
+            Console.WriteLine("Enter the transactions for the month");
+            Console.WriteLine("Withdrawl or deposit? (w/d)");
+            string resp = Console.ReadLine();
+            Console.WriteLine("Amount: ");
+            double amount = Convert.ToDouble(Console.ReadLine());
+
+            if (resp == "w") {
+                a1.Withdraw(amount);          
+            }
+
+            if (resp == "d") {
+                a1.Deposit(amount);
+            }
+
+            Console.WriteLine("Monthly Payments and Fees\nChecking fee: $"+a1.MonthlyFee);
+            Console.WriteLine("Final Balances\nChecking: $" + a1.Fees()); ;
+
 
 
         }
