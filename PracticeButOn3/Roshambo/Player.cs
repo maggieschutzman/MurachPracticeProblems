@@ -7,10 +7,9 @@ namespace PracticeButOn3.Roshambo {
 
         public string Name { get; set; }
         public Roshambo Rosh { get; set; }
+        public abstract Roshambo GenerateRoshambo();
+        public enum Roshambo {rock = 1, paper, scissors}
 
-        public abstract string GenerateRoshambo();
-
-        public enum Roshambo {Rock = 1, Paper, Scissors}
 
         public void SetRosh(Roshambo rosh) {
             this.Rosh = rosh;
@@ -20,5 +19,7 @@ namespace PracticeButOn3.Roshambo {
             return Rosh;
         }
 
+
+        }
     }
-}
+
