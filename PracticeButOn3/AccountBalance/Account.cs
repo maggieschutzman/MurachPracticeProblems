@@ -24,7 +24,6 @@ namespace PracticeButOn3.AccountBalance {
             Balance = GetBalance();
         }
 
-
         public void Withdraw(double amount) {
             if (Balance > amount) {
                 Balance = GetBalance() - amount;

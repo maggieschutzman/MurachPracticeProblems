@@ -1,5 +1,6 @@
 ﻿using PracticeButOn3;
 using PracticeButOn3.AccountBalance;
+using PracticeButOn3.Roshambo;
 using System;
 
 namespace ConsoleApp2 {
@@ -408,32 +409,68 @@ namespace ConsoleApp2 {
 
 
             //Account Balance Calculator
-            Console.WriteLine("Welcome to the Account application");
-            Account a1 = new Account();
-            a1.CustFN = "Maggie";
-            a1.CustFN = "Schutzman";
-            a1.Name = "Checking";
-            a1.Balance = 1000;
-            a1.MonthlyFee = 1;
-            Console.WriteLine("Starting Balances\nChecking: $" + a1.GetBalance()); ;
+            //Console.WriteLine("Welcome to the Account application");
+            //Account a1 = new Account();
+            //a1.CustFN = "Maggie";
+            //a1.CustFN = "Schutzman";
+            //a1.Name = "Checking";
+            //a1.Balance = 1000;
+            //a1.MonthlyFee = 1;           
+            //Console.WriteLine("Starting Balances\nChecking: $" + a1.GetBalance()); ;
+            //Console.WriteLine("Enter the transactions for the month");
+            //Console.WriteLine("Withdrawl or deposit? (w/d)");
+            //string resp = Console.ReadLine();
+            //Console.WriteLine("Amount: ");
+            //double amount = Convert.ToDouble(Console.ReadLine());
+            //if (resp == "w") {
+            //    a1.Withdraw(amount);          
+            //}
+            //if (resp == "d") {
+            //    a1.Deposit(amount);
+            //}
+            //Console.WriteLine("Monthly Payments and Fees\nChecking fee: $"+a1.MonthlyFee);
+            //Console.WriteLine("Final Balances\nChecking: $" + a1.Fees());
 
-            Console.WriteLine("Enter the transactions for the month");
-            Console.WriteLine("Withdrawl or deposit? (w/d)");
-            string resp = Console.ReadLine();
-            Console.WriteLine("Amount: ");
-            double amount = Convert.ToDouble(Console.ReadLine());
+            //Roshambo
+            Console.WriteLine("Welcome to the game of Roshambo");
+            Console.WriteLine("Enter your name");
+            string thisPlayer = Console.ReadLine();
+            Player1 player = new Player1();
+            player.Name = thisPlayer;
 
-            if (resp == "w") {
-                a1.Withdraw(amount);          
+            Console.WriteLine("Would you like to play as Bart or Lisa? (b/l)");
+            string sel = Console.ReadLine();
+            if (sel == "b") {
+                Console.WriteLine("Rock, paper, or scissors? (r/p/s)");
+                string opt = Console.ReadLine();
+                if (opt == "r") {
+                    Console.WriteLine($"{player.Name}: rock");
+                }
+                if (opt == "p") {
+                    Console.WriteLine($" {player.Name}: paper");
+                }
+                if (opt == "s") {
+                    Console.WriteLine($"{player.Name}: scissors");
+                }
+                string ro = player.GenerateRoshambo();
+                Console.WriteLine("Bart: " +ro );               
             }
+            if (sel == "l") {
+                Console.WriteLine("Rock, paper, or scissors? (r/p/s)");
+                string opt = Console.ReadLine();
+                if (opt == "r") {
+                    Console.WriteLine($"{player.Name}: rock");
+                }
+                if (opt == "p") {
+                    Console.WriteLine($" {player.Name}: paper");
+                }
+                if (opt == "s") {
+                    Console.WriteLine($"{player.Name}: scissors");
+                }
+                string lis = player.GenerateRoshambo();
+                Console.WriteLine("Lisa: "+lis);
 
-            if (resp == "d") {
-                a1.Deposit(amount);
             }
-
-            Console.WriteLine("Monthly Payments and Fees\nChecking fee: $"+a1.MonthlyFee);
-            Console.WriteLine("Final Balances\nChecking: $" + a1.Fees()); ;
-
 
 
         }
