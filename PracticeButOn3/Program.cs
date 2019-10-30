@@ -433,137 +433,161 @@ namespace ConsoleApp2 {
             //Console.WriteLine("Final Balances\nChecking: $" + a1.Fees());
 
             //Roshambo
-            Console.WriteLine("Welcome to the game of Roshambo");
-            Console.WriteLine("Enter your name");
-            string thisPlayer = Console.ReadLine();
-            Player1 player = new Player1();
-            Lisa lisa = new Lisa();
-            Bart bart = new Bart();
-            player.Name = thisPlayer;
-            Console.WriteLine("Would you like to play? (y/n)");
-            string cont = Console.ReadLine();
-            while (cont == "y") { 
-            Console.WriteLine("Would you like to play against Bart or Lisa? (b/l)");
-            string sel = Console.ReadLine();
+            //Console.WriteLine("Welcome to the game of Roshambo");
+            //Console.WriteLine("Enter your name");
+            //string thisPlayer = Console.ReadLine();
+            //Player1 player = new Player1();
+            //Lisa lisa = new Lisa();
+            //Bart bart = new Bart();
+            //player.Name = thisPlayer;
+            //Console.WriteLine("Would you like to play? (y/n)");
+            //string cont = Console.ReadLine();
+            //while (cont == "y") { 
+            //Console.WriteLine("Would you like to play against Bart or Lisa? (b/l)");
+            //string sel = Console.ReadLine();
 
-            if (sel == "b") {
-                Console.WriteLine("Rock, paper, or scissors? (r/p/s)");
+            //if (sel == "b") {
+            //    Console.WriteLine("Rock, paper, or scissors? (r/p/s)");
 
-                string opt = Console.ReadLine();
-                var ro = bart.GenerateRoshambo();
-                bart.SetRosh(ro);
-                Console.WriteLine("Bart: " + ro);
+            //    string opt = Console.ReadLine();
+            //    var ro = bart.GenerateRoshambo();
+            //    bart.SetRosh(ro);
+            //    Console.WriteLine("Bart: " + ro);
 
-                if (opt == "r") {
-                    player.Rosh = (Roshambo)1;
-                    Console.WriteLine($"{player.Name}: rock");
-                }
-                if (opt == "p") {
-                    player.Rosh = (Roshambo)2;
-                    Console.WriteLine($"{player.Name}: paper");
-                }
-                if (opt == "s") {
-                    player.Rosh = (Roshambo)3;
-                    Console.WriteLine($"{player.Name}: scissors");
-                }
+            //    if (opt == "r") {
+            //        player.Rosh = (Roshambo)1;
+            //        Console.WriteLine($"{player.Name}: rock");
+            //    }
+            //    if (opt == "p") {
+            //        player.Rosh = (Roshambo)2;
+            //        Console.WriteLine($"{player.Name}: paper");
+            //    }
+            //    if (opt == "s") {
+            //        player.Rosh = (Roshambo)3;
+            //        Console.WriteLine($"{player.Name}: scissors");
+            //    }
 
-                //rock beats scissors
-                if (player.Rosh == (Roshambo)1 && bart.Rosh == (Roshambo)3) {
-                    Console.WriteLine("Winner! Rock beats scissors!");
-                    player.Count++;
-                }
-                if (player.Rosh == (Roshambo)3 && bart.Rosh == (Roshambo)1) {
-                    Console.WriteLine("Sorry, you lose. Rock beats scissors.");
-                    bart.Count++;
-                }
-                //Paper beats rock
-                if (player.Rosh == (Roshambo)2 && bart.Rosh == (Roshambo)1) {
-                    Console.WriteLine("Winner! Paper beats rock!");
-                    player.Count++;
-                }
-                if (player.Rosh == (Roshambo)1 && bart.Rosh == (Roshambo)2) {
-                    Console.WriteLine("Sorry, you lose. Paper beats rock.");
-                    bart.Count++;
-                }
-                //scissors beat paper
-                if (player.Rosh == (Roshambo)3 && bart.Rosh == (Roshambo)2) {
-                    Console.WriteLine("Winner! Scissors beat paper!");
-                    player.Count++;
-                }
-                if (player.Rosh == (Roshambo)2 && bart.Rosh == (Roshambo)3) {
-                    Console.WriteLine("Sorry, you lose. Scissors beat paper.");
-                    bart.Count++;
-                }
-                if (player.Rosh == bart.Rosh) {
-                    Console.WriteLine("Draw! No one wins.");
-                }
-                Console.WriteLine($"{player.Name} has won {player.Count} times.");
-                Console.WriteLine($"Bart has won {bart.Count} times.");
-                Console.WriteLine("Play again? (y/n)");
-                cont = Console.ReadLine();
+            //    //rock beats scissors
+            //    if (player.Rosh == (Roshambo)1 && bart.Rosh == (Roshambo)3) {
+            //        Console.WriteLine("Winner! Rock beats scissors!");
+            //        player.Count++;
+            //    }
+            //    if (player.Rosh == (Roshambo)3 && bart.Rosh == (Roshambo)1) {
+            //        Console.WriteLine("Sorry, you lose. Rock beats scissors.");
+            //        bart.Count++;
+            //    }
+            //    //Paper beats rock
+            //    if (player.Rosh == (Roshambo)2 && bart.Rosh == (Roshambo)1) {
+            //        Console.WriteLine("Winner! Paper beats rock!");
+            //        player.Count++;
+            //    }
+            //    if (player.Rosh == (Roshambo)1 && bart.Rosh == (Roshambo)2) {
+            //        Console.WriteLine("Sorry, you lose. Paper beats rock.");
+            //        bart.Count++;
+            //    }
+            //    //scissors beat paper
+            //    if (player.Rosh == (Roshambo)3 && bart.Rosh == (Roshambo)2) {
+            //        Console.WriteLine("Winner! Scissors beat paper!");
+            //        player.Count++;
+            //    }
+            //    if (player.Rosh == (Roshambo)2 && bart.Rosh == (Roshambo)3) {
+            //        Console.WriteLine("Sorry, you lose. Scissors beat paper.");
+            //        bart.Count++;
+            //    }
+            //    if (player.Rosh == bart.Rosh) {
+            //        Console.WriteLine("Draw! No one wins.");
+            //    }
+            //    Console.WriteLine($"{player.Name} has won {player.Count} times.");
+            //    Console.WriteLine($"Bart has won {bart.Count} times.");
+            //    Console.WriteLine("Play again? (y/n)");
+            //    cont = Console.ReadLine();
+            //}
+
+            //    if (sel == "l") {
+            //        Console.WriteLine("Rock, paper, or scissors? (r/p/s)");
+            //        string opt = Console.ReadLine();
+            //        var lis = lisa.GenerateRoshambo();
+            //        lisa.SetRosh(lis);
+            //        Console.WriteLine("Lisa: " + lis);
+
+            //        if (opt == "r") {
+            //            player.Rosh = (Roshambo)1;
+            //            Console.WriteLine($"{player.Name}: rock");
+            //        }
+            //        if (opt == "p") {
+            //            player.Rosh = (Roshambo)2;
+            //            Console.WriteLine($" {player.Name}: paper");
+            //        }
+            //        if (opt == "s") {
+            //            player.Rosh = (Roshambo)3;
+            //            Console.WriteLine($"{player.Name}: scissors");
+            //        }
+
+
+            //        //rock beats scissors
+            //        if (player.Rosh == (Roshambo)1 && lisa.Rosh == (Roshambo)3) {
+            //            Console.WriteLine("Winner! Rock beats scissors!");
+            //            player.Count++;
+            //        }
+            //        if (player.Rosh == (Roshambo)3 && lisa.Rosh == (Roshambo)1) {
+            //            Console.WriteLine("Sorry, you lose. Rock beats scissors.");
+            //            lisa.Count++;
+            //        }
+            //        //Paper beats rock
+            //        if (player.Rosh == (Roshambo)2 && lisa.Rosh == (Roshambo)1) {
+            //            Console.WriteLine("Winner! Paper beats rock!");
+            //            player.Count++;
+            //        }
+            //        if (player.Rosh == (Roshambo)1 && lisa.Rosh == (Roshambo)2) {
+            //            Console.WriteLine("Sorry, you lose. Paper beats rock.");
+            //            lisa.Count++;
+            //        }
+            //        //scissors beat paper
+            //        if (player.Rosh == (Roshambo)3 && lisa.Rosh == (Roshambo)2) {
+            //            Console.WriteLine("Winner! Scissors beat paper!");
+            //            player.Count++;
+            //        }
+            //        if (player.Rosh == (Roshambo)2 && lisa.Rosh == (Roshambo)3) {
+            //            Console.WriteLine("Sorry, you lose. Scissors beat paper.");
+            //            lisa.Count++;
+            //        }
+            //        if (player.Rosh == lisa.Rosh) {
+            //            Console.WriteLine("Draw! No one wins.");
+            //        }
+            //        Console.WriteLine($"{player.Name} has won " + player.Count + " times.");
+            //        Console.WriteLine($"Lisa has won {lisa.Count} times.");
+            //        Console.WriteLine("Play again? (y/n)");
+            //        cont = Console.ReadLine();
+            //    }
+            //}
+
+
+            // Batting Statistics
+            Console.WriteLine("Enter number of times at bat: ");
+            string userInput = Console.ReadLine();
+            int oneNumber = int.Parse(userInput);
+            int[] bats = new int[oneNumber];
+            int batters = 0;
+            bats[batters] = oneNumber;
+            int total = 0;
+            Console.WriteLine("The number of times at bat is : " + bats[batters]);
+            Console.WriteLine("0 = out, 1 = single, 2 = double, 3 = triple, 4 = home run");
+
+            foreach( int bat in bats) { 
+                Console.WriteLine("Result for at-bat: ");
+                bats[batters] = Convert.ToInt32(Console.ReadLine());
             }
 
-                if (sel == "l") {
-                    Console.WriteLine("Rock, paper, or scissors? (r/p/s)");
-                    string opt = Console.ReadLine();
-                    var lis = lisa.GenerateRoshambo();
-                    lisa.SetRosh(lis);
-                    Console.WriteLine("Lisa: " + lis);
-
-                    if (opt == "r") {
-                        player.Rosh = (Roshambo)1;
-                        Console.WriteLine($"{player.Name}: rock");
-                    }
-                    if (opt == "p") {
-                        player.Rosh = (Roshambo)2;
-                        Console.WriteLine($" {player.Name}: paper");
-                    }
-                    if (opt == "s") {
-                        player.Rosh = (Roshambo)3;
-                        Console.WriteLine($"{player.Name}: scissors");
-                    }
-
-
-                    //rock beats scissors
-                    if (player.Rosh == (Roshambo)1 && lisa.Rosh == (Roshambo)3) {
-                        Console.WriteLine("Winner! Rock beats scissors!");
-                        player.Count++;
-                    }
-                    if (player.Rosh == (Roshambo)3 && lisa.Rosh == (Roshambo)1) {
-                        Console.WriteLine("Sorry, you lose. Rock beats scissors.");
-                        lisa.Count++;
-                    }
-                    //Paper beats rock
-                    if (player.Rosh == (Roshambo)2 && lisa.Rosh == (Roshambo)1) {
-                        Console.WriteLine("Winner! Paper beats rock!");
-                        player.Count++;
-                    }
-                    if (player.Rosh == (Roshambo)1 && lisa.Rosh == (Roshambo)2) {
-                        Console.WriteLine("Sorry, you lose. Paper beats rock.");
-                        lisa.Count++;
-                    }
-                    //scissors beat paper
-                    if (player.Rosh == (Roshambo)3 && lisa.Rosh == (Roshambo)2) {
-                        Console.WriteLine("Winner! Scissors beat paper!");
-                        player.Count++;
-                    }
-                    if (player.Rosh == (Roshambo)2 && lisa.Rosh == (Roshambo)3) {
-                        Console.WriteLine("Sorry, you lose. Scissors beat paper.");
-                        lisa.Count++;
-                    }
-                    if (player.Rosh == lisa.Rosh) {
-                        Console.WriteLine("Draw! No one wins.");
-                    }
-                    Console.WriteLine($"{player.Name} has won " + player.Count + " times.");
-                    Console.WriteLine($"Lisa has won {lisa.Count} times.");
-                    Console.WriteLine("Play again? (y/n)");
-                    cont = Console.ReadLine();
-                }
-            }
+            total = total + bats[batters];
+            int average = total / bats.Length;
+            Console.WriteLine("Batting average: " + average);
         }
-            
+
+
     }
+
 }
+
 
 
 
