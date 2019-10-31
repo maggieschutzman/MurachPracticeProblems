@@ -1,6 +1,7 @@
 ﻿using PracticeButOn3;
 using PracticeButOn3.AccountBalance;
 using PracticeButOn3.Roshambo;
+using PracticeButOn3.Students;
 using System;
 using static PracticeButOn3.Roshambo.Player;
 
@@ -563,30 +564,71 @@ namespace ConsoleApp2 {
 
 
             // Batting Statistics
-            Console.WriteLine("Enter number of times at bat: ");
-            string userInput = Console.ReadLine();
-            int oneNumber = int.Parse(userInput);
-            int[] bats = new int[oneNumber];
-            int batters = 0;
-            bats[batters] = oneNumber;
-            int total = 0;
-            Console.WriteLine("The number of times at bat is : " + bats[batters]);
-            Console.WriteLine("0 = out, 1 = single, 2 = double, 3 = triple, 4 = home run");
+            //    Console.WriteLine("Enter number of times at bat: ");
+            //    string userInput = Console.ReadLine();
+            //    int oneNumber = int.Parse(userInput);
+            //    int[] bats = new int[oneNumber];
+            //    int batters = 0;
+            //    bats[batters] = oneNumber;
+            //    int total = 0;
+            //    Console.WriteLine("The number of times at bat is : " + bats[batters]);
+            //    Console.WriteLine("0 = out, 1 = single, 2 = double, 3 = triple, 4 = home run");
+            //    foreach( int bat in bats) { 
+            //        Console.WriteLine("Result for at-bat: ");
+            //        bats[batters] = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //    total = total + bats[batters];
+            //    int average = total / bats.Length;
+            //    Console.WriteLine("Batting average: " + average);
+            //}
 
-            foreach( int bat in bats) { 
-                Console.WriteLine("Result for at-bat: ");
-                bats[batters] = Convert.ToInt32(Console.ReadLine());
+
+            //Student Scores
+            Students student = new Students();
+
+            Console.WriteLine("Number of students: ");
+            string userInput = Console.ReadLine();
+            student.Number = int.Parse(userInput);
+            string[] students = new string[student.Number];
+            int total = student.Number - 1;
+            
+            foreach (string stud in students) {
+                try {
+                    Console.WriteLine("STUDENT\nFirst Name: ");
+                    string firstname = Console.ReadLine();
+                    student.SetFirstName(firstname);
+                    bool fill = string.IsNullOrWhiteSpace(firstname);
+
+                    Console.WriteLine("Last Name: ");
+                    string lastname = Console.ReadLine();
+                    student.SetLastName(lastname);
+                    fill = string.IsNullOrWhiteSpace(lastname);
+                    if (fill == true)
+                        throw new Exception("Please enter a name");
+
+                    Console.WriteLine("Score: ");
+                    int score = Convert.ToInt32(Console.ReadLine());
+                    student.SetScore(score);
+                    if (score < 0 && score > 100) throw new Exception("Score must be greater than 0 and less than 100.");
+                    total = student.Number--;
+                }
+                catch (Exception e) { Console.WriteLine(e.Message); }
+            }
+            Console.WriteLine("STUDENTS:");
+            foreach (string stud in students) {
+                Console.WriteLine(student.DisplayStudent(student.FirstName, student.LastName, student.Score));
             }
 
-            total = total + bats[batters];
-            int average = total / bats.Length;
-            Console.WriteLine("Batting average: " + average);
+
+
+
+
+
+
         }
-
-
     }
-
 }
+
 
 
 
