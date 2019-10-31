@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PracticeButOn3 {
+namespace PracticeCsharp {
     class Grades {
 
         public int numericalGrade { get; set; }

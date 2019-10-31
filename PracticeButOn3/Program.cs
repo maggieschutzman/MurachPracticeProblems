@@ -1,9 +1,9 @@
-﻿using PracticeButOn3;
-using PracticeButOn3.AccountBalance;
-using PracticeButOn3.Roshambo;
-using PracticeButOn3.Students;
+﻿using PracticeCsharp;
+using PracticeCsharp.AccountBalance;
+using PracticeCsharp.Roshambo;
+using PracticeCsharp.Students;
 using System;
-using static PracticeButOn3.Roshambo.Player;
+using static PracticeCsharp.Roshambo.Player;
 
 namespace ConsoleApp2 {
     class Program {

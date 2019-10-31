@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PracticeButOn3.AccountBalance {
+namespace PracticeCsharp.AccountBalance {
     class Account : IBalanceable, IWithdrawable, IDepositable {
 
         public double Balance { get; set; }

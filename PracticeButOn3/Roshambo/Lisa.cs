@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-namespace PracticeButOn3.Roshambo {
+namespace PracticeCsharp.Roshambo {
     public class Lisa : Player {
 
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PracticeButOn3.Roshambo {
+namespace PracticeCsharp.Roshambo {
     public abstract class Player {
 
         public string Name { get; set; }

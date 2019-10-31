@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PracticeButOn3 {
+namespace PracticeCsharp {
     class Persons {
         public string Employee { get; set; }
         public string Customer { get; set; }

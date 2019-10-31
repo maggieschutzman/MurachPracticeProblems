@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PracticeButOn3.Roshambo {
+namespace PracticeCsharp.Roshambo {
     public class Bart : Player {
 
         public override Roshambo GenerateRoshambo() {

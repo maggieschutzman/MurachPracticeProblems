@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace PracticeButOn3 {
+namespace PracticeCsharp {
     class Customers : Persons {
 
         public string num { get; set; }
