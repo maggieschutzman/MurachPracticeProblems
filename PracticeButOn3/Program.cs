@@ -623,11 +623,9 @@ namespace ConsoleApp2 {
 
             //Tic Tac Toe
 
-            TicTacToe tic = new TicTacToe();
-            int player = tic.Player;
-            int choice = tic.Choice;
-            int flag = tic.Flag;
-
+            int player = TicTacToe.Player;
+            int choice = TicTacToe.Choice;
+            int flag = TicTacToe.Flag;
             char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
             do {
@@ -653,17 +651,17 @@ namespace ConsoleApp2 {
                         player++;
                     }
                 }
+
                 else // position is taken
                         {
                     Console.WriteLine("Sorry, the row {0} is already marked with {1}", choice, arr[choice]);
                     Console.WriteLine("\nPlease wait 2 seconds while the board loads..");
                     Thread.Sleep(2000);
                 }
-                flag = TicTacToe.CheckWin();
+
+              flag = TicTacToe.CheckWin();
             } while (flag != 1 && flag != -1);
 
-            Console.Clear();
-            TicTacToe.Board();
 
             if (flag == 1) {
                 Console.WriteLine("Player {0} has won", (player % 2) + 1); ;
@@ -672,6 +670,8 @@ namespace ConsoleApp2 {
                 Console.WriteLine("Draw");
             }
 
+            Console.Clear();
+            TicTacToe.Board();
             Console.ReadLine();
 
 

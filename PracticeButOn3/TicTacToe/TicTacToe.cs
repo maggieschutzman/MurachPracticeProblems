@@ -5,9 +5,9 @@ using System.Text;
 namespace PracticeCsharp.TicTacToe {
     class TicTacToe {
 
-        public int Player { get; set; } = 1;
-        public int Choice { get; set; }
-        public int Flag { get; set; } //winner count
+        public static int Player { get; set; } = 1;
+        public static int Choice { get; set; }
+        public static int Flag { get; set; } = 0; //winner count
 
         static char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
@@ -25,7 +25,7 @@ namespace PracticeCsharp.TicTacToe {
         public static int CheckWin() {
             // first row
             if (arr[1] == arr[2] && arr[2] == arr[3]) {
-                return 1;
+                return Flag +1;
             }
             // second row
             else if (arr[4] == arr[5] && arr[5] == arr[6]) {
