@@ -2,7 +2,9 @@
 using PracticeCsharp.AccountBalance;
 using PracticeCsharp.Roshambo;
 using PracticeCsharp.Students;
+using PracticeCsharp.TicTacToe;
 using System;
+using System.Threading;
 using static PracticeCsharp.Roshambo.Player;
 
 namespace ConsoleApp2 {
@@ -584,49 +586,101 @@ namespace ConsoleApp2 {
 
 
             //Student Scores
-            Students student = new Students();
+            //Students student = new Students();
 
-            Console.WriteLine("Number of students: ");
-            string userInput = Console.ReadLine();
-            student.Number = int.Parse(userInput);
-            string[] students = new string[student.Number];
-            int total = student.Number - 1;
-            
-            foreach (string stud in students) {
-                try {
-                    Console.WriteLine("STUDENT\nFirst Name: ");
-                    string firstname = Console.ReadLine();
-                    student.SetFirstName(firstname);
-                    bool fill = string.IsNullOrWhiteSpace(firstname);
+            //Console.WriteLine("Number of students: ");
+            //string userInput = Console.ReadLine();
+            //student.Number = int.Parse(userInput);
+            //string[] students = new string[student.Number];
+            //int total = student.Number - 1;
 
-                    Console.WriteLine("Last Name: ");
-                    string lastname = Console.ReadLine();
-                    student.SetLastName(lastname);
-                    fill = string.IsNullOrWhiteSpace(lastname);
-                    if (fill == true)
-                        throw new Exception("Please enter a name");
+            //foreach (string stud in students) {
+            //    try {
+            //        Console.WriteLine("STUDENT\nFirst Name: ");
+            //        string firstname = Console.ReadLine();
+            //        student.SetFirstName(firstname);
+            //        bool fill = string.IsNullOrWhiteSpace(firstname);
 
-                    Console.WriteLine("Score: ");
-                    int score = Convert.ToInt32(Console.ReadLine());
-                    student.SetScore(score);
-                    if (score < 0 && score > 100) throw new Exception("Score must be greater than 0 and less than 100.");
-                    total = student.Number--;
+            //        Console.WriteLine("Last Name: ");
+            //        string lastname = Console.ReadLine();
+            //        student.SetLastName(lastname);
+            //        fill = string.IsNullOrWhiteSpace(lastname);
+            //        if (fill == true)
+            //            throw new Exception("Please enter a name");
+            //        Console.WriteLine("Score: ");
+            //        int score = Convert.ToInt32(Console.ReadLine());
+            //        student.SetScore(score);
+            //        if (score < 0 && score > 100) throw new Exception("Score must be greater than 0 and less than 100.");
+            //        total = student.Number--;
+            //    }
+            //    catch (Exception e) { Console.WriteLine(e.Message); }
+            //}
+            //Console.WriteLine("STUDENTS:");
+            //foreach (string stud in students) {
+            //    Console.WriteLine(student.DisplayStudent(student.FirstName, student.LastName, student.Score));
+            //}
+
+
+            //Tic Tac Toe
+
+            TicTacToe tic = new TicTacToe();
+            int player = tic.Player;
+            int choice = tic.Choice;
+            int flag = tic.Flag;
+
+            char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
+            do {
+                Console.Clear();
+                Console.WriteLine("Player 1: X and Player 2: 0\n\n");
+                if (player % 2 == 0) {
+                    Console.WriteLine("Player 2 Chance\n");
                 }
-                catch (Exception e) { Console.WriteLine(e.Message); }
+                else {
+                    Console.WriteLine("Player 1 Chance\n");
+                }
+
+                TicTacToe.Board();
+                choice = int.Parse(Console.ReadLine());
+
+                if (arr[choice] != 'X' && arr[choice] != 'O') {
+                    if (player % 2 == 0) {
+                        arr[choice] = 'O';
+                        player++;
+                    }
+                    else {
+                        arr[choice] = 'X';
+                        player++;
+                    }
+                }
+                else // position is taken
+                        {
+                    Console.WriteLine("Sorry, the row {0} is already marked with {1}", choice, arr[choice]);
+                    Console.WriteLine("\nPlease wait 2 seconds while the board loads..");
+                    Thread.Sleep(2000);
+                }
+                flag = TicTacToe.CheckWin();
+            } while (flag != 1 && flag != -1);
+
+            Console.Clear();
+            TicTacToe.Board();
+
+            if (flag == 1) {
+                Console.WriteLine("Player {0} has won", (player % 2) + 1); ;
             }
-            Console.WriteLine("STUDENTS:");
-            foreach (string stud in students) {
-                Console.WriteLine(student.DisplayStudent(student.FirstName, student.LastName, student.Score));
+            else {
+                Console.WriteLine("Draw");
             }
 
+            Console.ReadLine();
 
 
-
-
-
-
+        
+        
+        
+        
         }
-    }
+    }    
 }
 
 
