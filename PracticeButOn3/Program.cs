@@ -680,27 +680,49 @@ namespace ConsoleApp2 {
 
 
             // Prime Number Checker
-            Prime prime = new Prime();
+            //Prime prime = new Prime();
+            //do {
+            //    Console.WriteLine("Please Enter an integer between 1 and 5000: ");
+            //    int number = int.Parse(Console.ReadLine());
+            //    prime.SetNumber(number);
+            //    prime.PrimeCalc();
+            //    if (prime.IsPrime() == true) {
+            //        Console.WriteLine($"{number} is a prime number.");
+            //    }
+            //    else { Console.WriteLine($"{number} is not a prime number."); }
+            //    Console.WriteLine("Again? (y/n)");
+            //    prime.Ans = Console.ReadLine(); }
+            //while (prime.Ans == "y");
+            //if (prime.Ans == "n"){
+            //    Console.WriteLine("Okay, bye!");
+            //    Environment.Exit(0);
+            //}
+
+
+            // Wizard Inventory Game
+
+            WizardGame wizard = new WizardGame();
             do {
-                Console.WriteLine("Please Enter an integer between 1 and 5000: ");
-                int number = int.Parse(Console.ReadLine());
-                prime.SetNumber(number);
-                prime.PrimeCalc();
-                if (prime.IsPrime() == true) {
-                    Console.WriteLine($"{number} is a prime number.");
+                Console.WriteLine("The Wizard Inventory Game.");
+                Console.WriteLine("COMMAND MENU\nshow - Show all items\ngrab - Grab an item\nedit - Edit an item\ndrop - Drop an item\nexit - Exit program");
+                Console.WriteLine("Command: ");
+                wizard.Command = Console.ReadLine();
+                string command = wizard.Command;
+                if (command == "show") {
+                    wizard.ShowItems();
                 }
-                else { Console.WriteLine($"{number} is not a prime number."); }
-                Console.WriteLine("Again? (y/n)");
-                prime.Ans = Console.ReadLine(); }
-            while (prime.Ans == "y");
-            if (prime.Ans == "n"){
-                Console.WriteLine("Okay, bye!");
-                Environment.Exit(0);
-            }
+                if (command == "grab") {
+                    Console.WriteLine("Name:");
+                    wizard.Item = Console.ReadLine();
+                    wizard.GrabItems(wizard.Item);
+                    Console.WriteLine($"{wizard.Item} was added.");
+                }
 
 
 
 
+
+            } while (wizard.Command != "exit");
 
 
         }
