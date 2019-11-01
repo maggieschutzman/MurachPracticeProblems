@@ -4,11 +4,15 @@ using PracticeCsharp.Roshambo;
 using PracticeCsharp.Students;
 using PracticeCsharp.TicTacToe;
 using System;
+using System.Linq;
 using System.Threading;
 using static PracticeCsharp.Roshambo.Player;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ConsoleApp2 {
     class Program {
+        
+
         static void Main() {
 
             // Registration Form
@@ -623,62 +627,82 @@ namespace ConsoleApp2 {
 
             //Tic Tac Toe
 
-            int player = TicTacToe.Player;
-            int choice = TicTacToe.Choice;
-            int flag = TicTacToe.Flag;
-            char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            //int player = TicTacToe.Player;
+            //int choice = TicTacToe.Choice;
+            //int flag = TicTacToe.Flag;
+            //char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
+            //do {
+            //    Console.Clear();
+            //    Console.WriteLine("Player 1: X and Player 2: 0\n\n");
+            //    if (player % 2 == 0) {
+            //        Console.WriteLine("Player 2 Chance\n");
+            //    }
+            //    else {
+            //        Console.WriteLine("Player 1 Chance\n");
+            //    }
+
+            //    TicTacToe.Board();
+            //    choice = int.Parse(Console.ReadLine());
+
+            //    if (arr[choice] != 'X' && arr[choice] != 'O') {
+            //        if (player % 2 == 0) {
+            //            arr[choice] = 'O';
+            //            player++;
+            //        }
+            //        else {
+            //            arr[choice] = 'X';
+            //            player++;
+            //        }
+            //    }
+
+            //    else // position is taken
+            //            {
+            //        Console.WriteLine("Sorry, the row {0} is already marked with {1}", choice, arr[choice]);
+            //        Console.WriteLine("\nPlease wait 2 seconds while the board loads..");
+            //        Thread.Sleep(2000);
+            //    }
+
+            //  flag = TicTacToe.CheckWin();
+            //} while (flag != 1 && flag != -1);
+
+
+            //if (flag == 1) {
+            //    Console.WriteLine("Player {0} has won", (player % 2) + 1); ;
+            //}
+            //else {
+            //    Console.WriteLine("Draw");
+            //}
+
+            //Console.Clear();
+            //TicTacToe.Board();
+            //Console.ReadLine();
+
+
+            // Prime Number Checker
+            Prime prime = new Prime();
             do {
-                Console.Clear();
-                Console.WriteLine("Player 1: X and Player 2: 0\n\n");
-                if (player % 2 == 0) {
-                    Console.WriteLine("Player 2 Chance\n");
+                Console.WriteLine("Please Enter an integer between 1 and 5000: ");
+                int number = int.Parse(Console.ReadLine());
+                prime.SetNumber(number);
+                prime.PrimeCalc();
+                if (prime.IsPrime() == true) {
+                    Console.WriteLine($"{number} is a prime number.");
                 }
-                else {
-                    Console.WriteLine("Player 1 Chance\n");
-                }
-
-                TicTacToe.Board();
-                choice = int.Parse(Console.ReadLine());
-
-                if (arr[choice] != 'X' && arr[choice] != 'O') {
-                    if (player % 2 == 0) {
-                        arr[choice] = 'O';
-                        player++;
-                    }
-                    else {
-                        arr[choice] = 'X';
-                        player++;
-                    }
-                }
-
-                else // position is taken
-                        {
-                    Console.WriteLine("Sorry, the row {0} is already marked with {1}", choice, arr[choice]);
-                    Console.WriteLine("\nPlease wait 2 seconds while the board loads..");
-                    Thread.Sleep(2000);
-                }
-
-              flag = TicTacToe.CheckWin();
-            } while (flag != 1 && flag != -1);
-
-
-            if (flag == 1) {
-                Console.WriteLine("Player {0} has won", (player % 2) + 1); ;
-            }
-            else {
-                Console.WriteLine("Draw");
+                else { Console.WriteLine($"{number} is not a prime number."); }
+                Console.WriteLine("Again? (y/n)");
+                prime.Ans = Console.ReadLine(); }
+            while (prime.Ans == "y");
+            if (prime.Ans == "n"){
+                Console.WriteLine("Okay, bye!");
+                Environment.Exit(0);
             }
 
-            Console.Clear();
-            TicTacToe.Board();
-            Console.ReadLine();
 
 
-        
-        
-        
-        
+
+
+
         }
     }    
 }
