@@ -16,17 +16,15 @@ namespace PracticeCsharp {
         }
 
         public string ShowItems() {
-            
-            Console.WriteLine(items[0]+", "+items[1] + ", " + items[2] + ", " + items[3]);                        
-            return ("This is what you possess right now.");
+            return (items[0]+", "+items[1] + ", " + items[2] + ", " + items[3]);
         }
 
         public void GrabItems(string Item) {
             items[Array.IndexOf(items,"Empty")] = Item;
         }
 
-        public void UpdateItems(string Item) {
-            items[Array.IndexOf(items, $"{Item}")] = "";       
+        public void UpdateItems(string edit) {
+            items[Array.IndexOf(items, $"{Item}")] = edit;       
         }
 
         public void DropItems(string Item) {

@@ -650,7 +650,6 @@ namespace ConsoleApp2 {
             //            TicTacToe.SetChoice(choice);
             //            flag = TicTacToe.CheckWin();
             //            player++;
-
             //        }
             //        else {
             //            arr[choice] = 'X';
@@ -665,7 +664,6 @@ namespace ConsoleApp2 {
             //        Console.WriteLine("\nPlease wait 2 seconds while the board loads..");
             //        Thread.Sleep(2000);
             //    }
-
             //    flag = TicTacToe.CheckWin();
             //} while (flag != 1 && flag != -1);
             //flag = TicTacToe.CheckWin();
@@ -703,62 +701,80 @@ namespace ConsoleApp2 {
 
             // Wizard Inventory Game
 
-            WizardGame wizard = new WizardGame();
-            Console.WriteLine("the wizard inventory game.");
-            Console.WriteLine("command menu\nshow - show all items\ngrab - grab an item\nedit - edit an item\ndrop - drop an item\nexit - exit program");
-            string command = Console.ReadLine();
-            wizard.SetCommand(command);
-            do {
-                if (command == "show") {
-                    wizard.ShowItems();               
-                    Console.WriteLine("Now what?");
-                    command = Console.ReadLine();
-                }
+            //WizardGame wizard = new WizardGame();
+            //Console.WriteLine("the wizard inventory game.");
 
-                if (command == "drop") {
-                    Console.WriteLine(wizard.ShowItems()+"\nWhat would you like to drop?");
-                    string drop = Console.ReadLine();
-                    wizard.DropItems(drop);
-                    Console.WriteLine(drop+" Has been dropped.");
-                    Console.WriteLine("Now what?");
-                    command = Console.ReadLine();
-                }
-                    
-                if (command == "grab" && wizard.items.Contains("Empty")) {
-                    Console.WriteLine("name:");
-                    wizard.Item = Console.ReadLine();
-                    wizard.GrabItems(wizard.Item);
-                    Console.WriteLine($"{wizard.Item} was added.");
-                    Console.WriteLine("Now what?");
-                    command = Console.ReadLine();
-                }
+            //Console.WriteLine("command menu\nshow - show all items\ngrab - grab an item\nedit - edit an item\ndrop - drop an item\nexit - exit program");
+            //string command = Console.ReadLine();
+            //wizard.SetCommand(command);
+            //try {
+            //    while (command != "exit") {
 
-                if (command == "grab" && !wizard.items.Contains("Empty")) { 
-                    Console.WriteLine("your inventory is full. you must drop something.\nWhat would you like to drop?\n"+wizard.ShowItems());
-                    string drop = Console.ReadLine();
-                    wizard.DropItems(drop);
-                    Console.WriteLine("Name the item you want to add.");
-                    wizard.Item = Console.ReadLine();
-                    wizard.GrabItems(wizard.Item);
-                    Console.WriteLine($"{wizard.Item} was added.");
-                    Console.WriteLine("Now what?");
-                    command = Console.ReadLine();               
-                 }
-
-                if (command == "edit") {
-                    Console.WriteLine("Which item would you like to edit?\n"+wizard.ShowItems());
-                }
-                
+            //        if (command != "show" || command != "grab" || command != "edit" || command != "drop" || command != "exit")
+            //            throw new Exception("Not a valid command. Try again.");
 
 
-            }
+            //        if (command == "show") {
+            //            Console.WriteLine("This is what you currently possess.\n" + wizard.ShowItems());
+            //            Console.WriteLine("New command?");
+            //            command = Console.ReadLine();
+            //        }
+            //        if (command == "drop") {
+            //            Console.WriteLine(wizard.ShowItems() + "\nWhat would you like to drop?");
+            //            string drop = Console.ReadLine();
+            //            wizard.DropItems(drop);
+            //            Console.WriteLine(drop + " Has been dropped.");
+            //            Console.WriteLine("New command?");
+            //            command = Console.ReadLine();
+            //        }
+            //        if (command == "grab" && wizard.items.Contains("Empty")) {
+            //            Console.WriteLine("name:");
+            //            wizard.Item = Console.ReadLine();
+            //            wizard.GrabItems(wizard.Item);
+            //            Console.WriteLine($"{wizard.Item} was added.");
+            //            Console.WriteLine("New command?");
+            //            command = Console.ReadLine();
+            //        }
+            //        if (command == "grab" && !wizard.items.Contains("Empty")) {
+            //            Console.WriteLine("your inventory is full. you must drop something.\nWhat would you like to drop?\n" + wizard.ShowItems());
+            //            string drop = Console.ReadLine();
+            //            wizard.DropItems(drop);
+            //            Console.WriteLine("Name the item you want to add.");
+            //            wizard.Item = Console.ReadLine();
+            //            wizard.GrabItems(wizard.Item);
+            //            Console.WriteLine($"{wizard.Item} was added.");
+            //            Console.WriteLine("New command?");
+            //            command = Console.ReadLine();
+            //        }
+            //        if (command == "edit") {
+            //            Console.WriteLine("Which item would you like to edit?\n" + wizard.ShowItems());
+            //            wizard.Item = Console.ReadLine();
+            //            Console.WriteLine("Edit: ");
+            //            string edit = Console.ReadLine();
+            //            wizard.UpdateItems(edit);
+            //            Console.WriteLine($"{wizard.Item} was Edited.\n" + wizard.ShowItems());
+            //            Console.WriteLine("New command?");
+            //            command = Console.ReadLine();
+            //            }
+            //        }
+            //    }
+            //catch (Exception e) {
+            //    Console.WriteLine(e.Message);
+            //}
 
-            while (command != "exit");
+
+            //Stack Calculator
+
+            Console.WriteLine("Welcome to th4e Stack Calculator");
+            Console.WriteLine("Commands: push n, add, sub, mult, div, clear, or quit");
 
 
         }
-        }        
- }
+    }
+               
+}
+      
+ 
        
 
 
