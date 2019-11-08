@@ -21,11 +21,14 @@ namespace PracticeCsharp.TicTacToe {
             
         }
 
+        public static int SetChoice(int choice) {
+            return choice = Choice;
+        }
 
         public static int CheckWin() {
             // first row
             if (arr[1] == arr[2] && arr[2] == arr[3]) {
-                return Flag +1;
+                return 1;
             }
             // second row
             else if (arr[4] == arr[5] && arr[5] == arr[6]) {
@@ -34,7 +37,7 @@ namespace PracticeCsharp.TicTacToe {
 
             // third row
             else if (arr[6] == arr[7] && arr[7] == arr[8]) {
-                return 1;
+                return Flag + 1;
             }
 
             // first column

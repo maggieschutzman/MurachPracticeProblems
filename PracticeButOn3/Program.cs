@@ -9,9 +9,10 @@ using System.Threading;
 using static PracticeCsharp.Roshambo.Player;
 using static System.Net.Mime.MediaTypeNames;
 
+
 namespace ConsoleApp2 {
     class Program {
-        
+
 
         static void Main() {
 
@@ -631,7 +632,6 @@ namespace ConsoleApp2 {
             //int choice = TicTacToe.Choice;
             //int flag = TicTacToe.Flag;
             //char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-
             //do {
             //    Console.Clear();
             //    Console.WriteLine("Player 1: X and Player 2: 0\n\n");
@@ -641,21 +641,24 @@ namespace ConsoleApp2 {
             //    else {
             //        Console.WriteLine("Player 1 Chance\n");
             //    }
-
             //    TicTacToe.Board();
             //    choice = int.Parse(Console.ReadLine());
 
             //    if (arr[choice] != 'X' && arr[choice] != 'O') {
             //        if (player % 2 == 0) {
             //            arr[choice] = 'O';
+            //            TicTacToe.SetChoice(choice);
+            //            flag = TicTacToe.CheckWin();
             //            player++;
+
             //        }
             //        else {
             //            arr[choice] = 'X';
+            //            TicTacToe.SetChoice(choice);
+            //            flag = TicTacToe.CheckWin();
             //            player++;
             //        }
             //    }
-
             //    else // position is taken
             //            {
             //        Console.WriteLine("Sorry, the row {0} is already marked with {1}", choice, arr[choice]);
@@ -663,9 +666,9 @@ namespace ConsoleApp2 {
             //        Thread.Sleep(2000);
             //    }
 
-            //  flag = TicTacToe.CheckWin();
+            //    flag = TicTacToe.CheckWin();
             //} while (flag != 1 && flag != -1);
-
+            //flag = TicTacToe.CheckWin();
 
             //if (flag == 1) {
             //    Console.WriteLine("Player {0} has won", (player % 2) + 1); ;
@@ -673,7 +676,6 @@ namespace ConsoleApp2 {
             //else {
             //    Console.WriteLine("Draw");
             //}
-
             //Console.Clear();
             //TicTacToe.Board();
             //Console.ReadLine();
@@ -702,32 +704,63 @@ namespace ConsoleApp2 {
             // Wizard Inventory Game
 
             WizardGame wizard = new WizardGame();
+            Console.WriteLine("the wizard inventory game.");
+            Console.WriteLine("command menu\nshow - show all items\ngrab - grab an item\nedit - edit an item\ndrop - drop an item\nexit - exit program");
+            string command = Console.ReadLine();
+            wizard.SetCommand(command);
             do {
-                Console.WriteLine("The Wizard Inventory Game.");
-                Console.WriteLine("COMMAND MENU\nshow - Show all items\ngrab - Grab an item\nedit - Edit an item\ndrop - Drop an item\nexit - Exit program");
-                Console.WriteLine("Command: ");
-                wizard.Command = Console.ReadLine();
-                string command = wizard.Command;
                 if (command == "show") {
-                    wizard.ShowItems();
+                    wizard.ShowItems();               
+                    Console.WriteLine("Now what?");
+                    command = Console.ReadLine();
                 }
-                if (command == "grab") {
-                    Console.WriteLine("Name:");
+
+                if (command == "drop") {
+                    Console.WriteLine(wizard.ShowItems()+"\nWhat would you like to drop?");
+                    string drop = Console.ReadLine();
+                    wizard.DropItems(drop);
+                    Console.WriteLine(drop+" Has been dropped.");
+                    Console.WriteLine("Now what?");
+                    command = Console.ReadLine();
+                }
+                    
+                if (command == "grab" && wizard.items.Contains("Empty")) {
+                    Console.WriteLine("name:");
                     wizard.Item = Console.ReadLine();
                     wizard.GrabItems(wizard.Item);
                     Console.WriteLine($"{wizard.Item} was added.");
+                    Console.WriteLine("Now what?");
+                    command = Console.ReadLine();
                 }
 
+                if (command == "grab" && !wizard.items.Contains("Empty")) { 
+                    Console.WriteLine("your inventory is full. you must drop something.\nWhat would you like to drop?\n"+wizard.ShowItems());
+                    string drop = Console.ReadLine();
+                    wizard.DropItems(drop);
+                    Console.WriteLine("Name the item you want to add.");
+                    wizard.Item = Console.ReadLine();
+                    wizard.GrabItems(wizard.Item);
+                    Console.WriteLine($"{wizard.Item} was added.");
+                    Console.WriteLine("Now what?");
+                    command = Console.ReadLine();               
+                 }
+
+                if (command == "edit") {
+                    Console.WriteLine("Which item would you like to edit?\n"+wizard.ShowItems());
+                }
+                
 
 
+            }
 
-
-            } while (wizard.Command != "exit");
+            while (command != "exit");
 
 
         }
-    }    
-}
+        }        
+ }
+       
+
 
 
 
