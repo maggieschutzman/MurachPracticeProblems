@@ -4,8 +4,12 @@ using PracticeCsharp.Roshambo;
 using PracticeCsharp.Students;
 using PracticeCsharp.TicTacToe;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
+using System.Web;
 using static PracticeCsharp.Roshambo.Player;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -763,16 +767,21 @@ namespace ConsoleApp2 {
             //}
 
 
-            //Stack Calculator
+            //Email Creator
+            var emails = new Emails();
+            emails.LoadEmails();
+            emails.PrintEmails();
+            
+            
+ 
 
-            Console.WriteLine("Welcome to th4e Stack Calculator");
-            Console.WriteLine("Commands: push n, add, sub, mult, div, clear, or quit");
-
-
-        }
     }
-               
+    }
 }
+    
+
+               
+
       
  
        
