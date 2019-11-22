@@ -771,8 +771,12 @@ namespace ConsoleApp2 {
             var emails = new Emails();
             emails.LoadEmails();
             emails.PrintEmails();
-            
-            
+            Console.WriteLine("Would you like to add more users?");
+            string ans = Console.ReadLine();
+            if (ans == "yes") {
+                emails.AddUser();
+                emails.PrintEmails();
+            }
  
 
     }
