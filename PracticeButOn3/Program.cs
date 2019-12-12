@@ -838,38 +838,42 @@ namespace ConsoleApp2 {
             //}
             //birthdayCakeCandles(ar);
 
-            //plusMinus Function
-            int[] arr = new int[] {-4, 3, -9, 0, 4, 1};
-            List<int> pos = new List<int>();
-            List<int> neg = new List<int>();
-            List<int> zero = new List<int>();
-            for (int i = 0; i < arr.Length; i++) {
-                if (arr[i] > 0) {
-                    pos.Add(i);
-                    Console.WriteLine(arr[i]+" has been added to the list of positive numbers.");
-                }              
-                if (arr[i] < 0) {
-                    neg.Add(i);
-                    Console.WriteLine(arr[i] + " has been added to the list of negative numbers.");
-                }
-                if (arr[i] == 0) {
-                    zero.Add(i);
-                    if (zero.Count > 1) {
-                        Console.WriteLine($"There are {zero.Count} zeroes.");
-                    }
-                    if (zero.Count == 1) {
-                        Console.WriteLine($"There is {zero.Count} zero.");
-                    }
-                }
-            }
-            Console.WriteLine(arr.Length);
 
-            decimal posDec = Convert.ToDecimal((pos.Count * .100 ) / (arr.Length * .100)) ;
-            Console.WriteLine("The percentange of pozitive numbers is "+posDec.ToString("N6"));
-            decimal negDec = Convert.ToDecimal((neg.Count * .100) / (arr.Length * .100));
-            Console.WriteLine("The percentage of negative numbers is "+negDec.ToString("N6"));
-            decimal zeroDec = Convert.ToDecimal((zero.Count * .100) / (arr.Length * .100));
-            Console.WriteLine("The percentage of zeroes is "+zeroDec.ToString("N6"));
+            //plusMinus Function
+            //What percentage of the array contains positive, negative, and zeros
+
+            //int[] arr = new int[] {-4, 3, -9, 0, 4, 1};
+            //List<int> pos = new List<int>();
+            //List<int> neg = new List<int>();
+            //List<int> zero = new List<int>();
+            //for (int i = 0; i < arr.Length; i++) {
+            //    if (arr[i] > 0) {
+            //        pos.Add(i);
+            //        Console.WriteLine(arr[i]+" has been added to the list of positive numbers.");
+            //    }              
+            //    if (arr[i] < 0) {
+            //        neg.Add(i);
+            //        Console.WriteLine(arr[i] + " has been added to the list of negative numbers.");
+            //    }
+            //    if (arr[i] == 0) {
+            //        zero.Add(i);
+            //        if (zero.Count > 1) {
+            //            Console.WriteLine($"There are {zero.Count} zeroes.");
+            //        }
+            //        if (zero.Count == 1) {
+            //            Console.WriteLine($"There is {zero.Count} zero.");
+            //        }
+            //    }
+            //}
+            //Console.WriteLine(arr.Length);
+            //decimal posDec = Convert.ToDecimal((pos.Count * .100 ) / (arr.Length * .100)) ;
+            //Console.WriteLine("The percentange of pozitive numbers is "+posDec.ToString("N6"));
+            //decimal negDec = Convert.ToDecimal((neg.Count * .100) / (arr.Length * .100));
+            //Console.WriteLine("The percentage of negative numbers is "+negDec.ToString("N6"));
+            //decimal zeroDec = Convert.ToDecimal((zero.Count * .100) / (arr.Length * .100));
+            //Console.WriteLine("The percentage of zeros is "+zeroDec.ToString("N6"));
+
+
 
             }
         }
