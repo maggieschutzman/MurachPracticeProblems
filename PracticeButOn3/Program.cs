@@ -778,43 +778,18 @@ namespace ConsoleApp2 {
             //    emails.AddUser();
             //    emails.PrintEmails();
             //}
-            //static string findNumber(List<int> arr, int k) {
-
-
-            //}
-            //Console.WriteLine("Enter first number:");
-            //int l = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine("and second .. ");
-            //int r = Convert.ToInt32(Console.ReadLine());
-
-            //List<int> Numbers = new List<int>();
-            //Numbers.Add(l);
-            //Numbers.Add(r);       
-            //while (Numbers.Count < r ) {              
-            //    Numbers.Add(l++);
-
-            //    }
-            //Numbers.RemoveAt(1);
-
-            //Console.WriteLine("The list consists of !!!! " );
-            //foreach (int num in Numbers) {
-            //    Numbers.Skip(1);
-            //    Console.WriteLine(num);
-            //}
-            //plusMinus(arr);
 
 
             //MiniMax 
             //Using four of the five, which produces largest/smallest result
 
-            //int[] arr = new int[] { 1, 3, 5, 7, 9 };
-            //static int miniMax(int[] arr) {
-            //    int totalm = arr.Sum() - arr.Min() ;
-            //    int total = arr.Sum() - arr.Max();
-            //    return total;
-            //}
-            //Console.WriteLine(miniMax(arr));
-
+            int[] arr = new int[] { 1, 3, 5, 7, 9 };
+            static int miniMax(int[] arr) {
+                int totalm = arr.Sum() - arr.Min();
+                int total = arr.Sum() - arr.Max();
+                return total;
+            }
+            Console.WriteLine(miniMax(arr));
 
 
             // Birthday Candles
@@ -875,7 +850,7 @@ namespace ConsoleApp2 {
 
 
 
-            }
+        }
         }
 
     }
