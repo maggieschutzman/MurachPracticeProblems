@@ -14,11 +14,14 @@ using static PracticeCsharp.Roshambo.Player;
 using static System.Net.Mime.MediaTypeNames;
 
 
-namespace ConsoleApp2 {
-    class Program {
+namespace ConsoleApp2
+{
+    class Program
+    {
 
 
-        static void Main() {
+        static void Main()
+        {
 
             // Registration Form
 
@@ -783,19 +786,20 @@ namespace ConsoleApp2 {
             //MiniMax 
             //Using four of the five, which produces largest/smallest result
 
-            int[] arr = new int[] { 1, 3, 5, 7, 9 };
-            static int miniMax(int[] arr) {
-                int totalm = arr.Sum() - arr.Min();
-                int total = arr.Sum() - arr.Max();
-                return total;
-            }
-            Console.WriteLine(miniMax(arr));
+            //int[] arr = new int[] { 1, 3, 5, 7, 9 };
+            //static void miniMax(int[] arr) {
+            //    long maxtotal = Convert.ToInt64(arr.Sum() - arr.Min());
+            //    long mintotal = Convert.ToInt64(arr.Sum() - arr.Max());
+            //    Console.WriteLine(mintotal + " " + maxtotal);
+            //    return;
+            //}
+            //miniMax(arr);
 
 
             // Birthday Candles
             // Tallest candles that can be reached
 
-            //int[] ar = new int[] { 3,2,1,3};
+            //int[] ar = new int[] { 3, 2, 1, 3 };
             //static int birthdayCakeCandles(int[] ar) {
             //    int candle = 0;
             //    int mid = 0;
@@ -804,10 +808,10 @@ namespace ConsoleApp2 {
             //    foreach (int value in ar) {
             //        Console.Write(value + " ");
             //    }
-            //    int[] arr = ar.ToList().GetRange(mid, ar.Length-2).ToArray();
+            //    int[] arr = ar.ToList().GetRange(mid, ar.Length - 2).ToArray();
             //    foreach (int value in arr) {
-            //         candle++;               
-            //   }
+            //        candle++;
+            //    }
             //    Console.WriteLine("\nThe number of candles is " + candle);
             //    return candle;
             //}
@@ -849,11 +853,134 @@ namespace ConsoleApp2 {
             //Console.WriteLine("The percentage of zeros is "+zeroDec.ToString("N6"));
 
 
+            //If else & switch
 
-        }
-        }
+            //Console.WriteLine("Enter a state to see the capital");
+            //string state = Console.ReadLine().ToLower();
+            //string capital = "";
+            //if (state == "ky")
+            //{
+            //    capital = "Frankfort";
+            //}
+            //else if (state == "oh")
+            //{
+            //    capital = "Columbus";
+            //}
+            //else if (state == "pa")
+            //{
+            //    capital = "Harrisburg";
+            //}
+            //else if (state == "in") {
+            //    capital = "Indianpolis";
+            //}
+            //Console.WriteLine($"The capital of {state.ToUpper()} is " + capital);
+
+            //Console.WriteLine("Enter a state to see the capital");
+            //string state = Console.ReadLine().ToLower();
+            //string capital = "";
+            //switch (state) {
+            //    case "ky":          
+            //    capital = "Frankfort";
+            //        Console.WriteLine($"The capital of {state.ToUpper()} is " + capital);
+            //        break;
+            //    case "oh":           
+            //    capital = "Columbus";
+            //        Console.WriteLine($"The capital of {state.ToUpper()} is " + capital);
+            //        break;
+            //    case "pa":        
+            //    capital = "Harrisburg";
+            //        Console.WriteLine($"The capital of {state.ToUpper()} is " + capital);
+            //        break;
+            //    case "in":           
+            //    capital = "Indianpolis";
+            //        Console.WriteLine($"The capital of {state.ToUpper()} is " + capital);
+            //        break;
+            //}
+
+
+
+            // Wizard Inventory Game
+
+            WizardGame wizard = new WizardGame();
+            Console.WriteLine("the wizard inventory game.");
+
+            Console.WriteLine("command menu\nshow - show all items\ngrab - grab an item\nedit - edit an item\ndrop - drop an item\nexit - exit program");
+            string command = Console.ReadLine().ToLower();
+            wizard.SetCommand(command);
+            try
+            {
+                while (command != "exit")
+                {
+
+                 if (command != "show" || command != "grab" || command != "edit" || command != "drop" || command != "exit")
+                     throw new Exception("Not a valid command. Try again.");
+
+
+                    switch (command)
+                    {
+                        case "show":
+                            Console.WriteLine("This is what you currently possess.\n" + wizard.ShowItems());
+                            Console.WriteLine("New command?");
+                            command = Console.ReadLine();
+                            break;
+                        case "drop":
+                            Console.WriteLine(wizard.ShowItems() + "\nWhat would you like to drop?");
+                            string drop = Console.ReadLine();
+                            wizard.DropItems(drop);
+                            Console.WriteLine(drop + " Has been dropped.");
+                            Console.WriteLine("New command?");
+                            command = Console.ReadLine();
+                            break;
+                        case "edit":
+                            Console.WriteLine("Which item would you like to edit?\n" + wizard.ShowItems());
+                            wizard.Item = Console.ReadLine();
+                            Console.WriteLine("Edit: ");
+                            string edit = Console.ReadLine();
+                            wizard.UpdateItems(edit);
+                            Console.WriteLine($"{wizard.Item} was Edited.\n" + wizard.ShowItems());
+                            Console.WriteLine("New command?");
+                            command = Console.ReadLine();
+                            break;
+                        case "add":
+                            if (wizard.items.Contains("Empty"))
+                            {
+                                Console.WriteLine("name:");
+                                wizard.Item = Console.ReadLine();
+                                wizard.AddItems(wizard.Item);
+                                Console.WriteLine($"{wizard.Item} was added.");
+                                Console.WriteLine("New command?");
+                                command = Console.ReadLine();
+                            }
+                            if (!wizard.items.Contains("Empty"))
+                            {
+                                Console.WriteLine("your inventory is full. you must drop something.\nWhat would you like to drop?\n" + wizard.ShowItems());
+                                drop = Console.ReadLine();
+                                wizard.DropItems(drop);
+                                Console.WriteLine("Name the item you want to add.");
+                                wizard.Item = Console.ReadLine();
+                                wizard.AddItems(wizard.Item);
+                                Console.WriteLine($"{wizard.Item} was added.");
+                                Console.WriteLine("New command?");
+                                command = Console.ReadLine();
+
+                            }
+                            break;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            }
 
     }
+}
+    
+   
+
+    
 
 
 
