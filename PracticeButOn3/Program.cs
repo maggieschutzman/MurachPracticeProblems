@@ -7,6 +7,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
@@ -899,84 +900,107 @@ namespace ConsoleApp2
 
 
 
-            // Wizard Inventory Game
+            // Wizard Inventory Game but with switch statements
 
-            WizardGame wizard = new WizardGame();
-            Console.WriteLine("the wizard inventory game.");
+            //WizardGame wizard = new WizardGame();
+            //Console.WriteLine("the wizard inventory game.");
+            //Console.WriteLine("command menu\nshow - show all items\ngrab - grab an item\nedit - edit an item\ndrop - drop an item\nexit - exit program");
+            //string command = Console.ReadLine().ToLower();
+            //wizard.SetCommand(command);
+            //try
+            //{
+            //    while (command != "exit")
+            //    {
+            //     if (command != "show" || command != "grab" || command != "edit" || command != "drop" || command != "exit")
+            //         throw new Exception("Not a valid command. Try again.");
+            //        switch (command)
+            //        {
+            //            case "show":
+            //                Console.WriteLine("This is what you currently possess.\n" + wizard.ShowItems());
+            //                Console.WriteLine("New command?");
+            //                command = Console.ReadLine();
+            //                break;
+            //            case "drop":
+            //                Console.WriteLine(wizard.ShowItems() + "\nWhat would you like to drop?");
+            //                string drop = Console.ReadLine();
+            //                wizard.DropItems(drop);
+            //                Console.WriteLine(drop + " Has been dropped.");
+            //                Console.WriteLine("New command?");
+            //                command = Console.ReadLine();
+            //                break;
+            //            case "edit":
+            //                Console.WriteLine("Which item would you like to edit?\n" + wizard.ShowItems());
+            //                wizard.Item = Console.ReadLine();
+            //                Console.WriteLine("Edit: ");
+            //                string edit = Console.ReadLine();
+            //                wizard.UpdateItems(edit);
+            //                Console.WriteLine($"{wizard.Item} was Edited.\n" + wizard.ShowItems());
+            //                Console.WriteLine("New command?");
+            //                command = Console.ReadLine();
+            //                break;
+            //            case "add":
+            //                if (wizard.items.Contains("Empty"))
+            //                {
+            //                    Console.WriteLine("name:");
+            //                    wizard.Item = Console.ReadLine();
+            //                    wizard.AddItems(wizard.Item);
+            //                    Console.WriteLine($"{wizard.Item} was added.");
+            //                    Console.WriteLine("New command?");
+            //                    command = Console.ReadLine();
+            //                }
+            //                if (!wizard.items.Contains("Empty"))
+            //                {
+            //                    Console.WriteLine("your inventory is full. you must drop something.\nWhat would you like to drop?\n" + wizard.ShowItems());
+            //                    drop = Console.ReadLine();
+            //                    wizard.DropItems(drop);
+            //                    Console.WriteLine("Name the item you want to add.");
+            //                    wizard.Item = Console.ReadLine();
+            //                    wizard.AddItems(wizard.Item);
+            //                    Console.WriteLine($"{wizard.Item} was added.");
+            //                    Console.WriteLine("New command?");
+            //                    command = Console.ReadLine();
+            //                }
+            //                break;
+            //        }
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
 
-            Console.WriteLine("command menu\nshow - show all items\ngrab - grab an item\nedit - edit an item\ndrop - drop an item\nexit - exit program");
-            string command = Console.ReadLine().ToLower();
-            wizard.SetCommand(command);
-            try
-            {
-                while (command != "exit")
-                {
-
-                 if (command != "show" || command != "grab" || command != "edit" || command != "drop" || command != "exit")
-                     throw new Exception("Not a valid command. Try again.");
 
 
-                    switch (command)
-                    {
-                        case "show":
-                            Console.WriteLine("This is what you currently possess.\n" + wizard.ShowItems());
-                            Console.WriteLine("New command?");
-                            command = Console.ReadLine();
-                            break;
-                        case "drop":
-                            Console.WriteLine(wizard.ShowItems() + "\nWhat would you like to drop?");
-                            string drop = Console.ReadLine();
-                            wizard.DropItems(drop);
-                            Console.WriteLine(drop + " Has been dropped.");
-                            Console.WriteLine("New command?");
-                            command = Console.ReadLine();
-                            break;
-                        case "edit":
-                            Console.WriteLine("Which item would you like to edit?\n" + wizard.ShowItems());
-                            wizard.Item = Console.ReadLine();
-                            Console.WriteLine("Edit: ");
-                            string edit = Console.ReadLine();
-                            wizard.UpdateItems(edit);
-                            Console.WriteLine($"{wizard.Item} was Edited.\n" + wizard.ShowItems());
-                            Console.WriteLine("New command?");
-                            command = Console.ReadLine();
-                            break;
-                        case "add":
-                            if (wizard.items.Contains("Empty"))
-                            {
-                                Console.WriteLine("name:");
-                                wizard.Item = Console.ReadLine();
-                                wizard.AddItems(wizard.Item);
-                                Console.WriteLine($"{wizard.Item} was added.");
-                                Console.WriteLine("New command?");
-                                command = Console.ReadLine();
-                            }
-                            if (!wizard.items.Contains("Empty"))
-                            {
-                                Console.WriteLine("your inventory is full. you must drop something.\nWhat would you like to drop?\n" + wizard.ShowItems());
-                                drop = Console.ReadLine();
-                                wizard.DropItems(drop);
-                                Console.WriteLine("Name the item you want to add.");
-                                wizard.Item = Console.ReadLine();
-                                wizard.AddItems(wizard.Item);
-                                Console.WriteLine($"{wizard.Item} was added.");
-                                Console.WriteLine("New command?");
-                                command = Console.ReadLine();
+            // HTML Converter
 
-                            }
-                            break;
-                    }
-                }
+             string html = "<h1>Grocery List </h1>\n" +
+                          "<ul>\n" +
+                          "    <li>Eggs</li>\n" +
+                          "    <li>Milk</li>\n" +
+                          "    <li>Butter</li>\n" +
+                          " </ul>";
+          
+              string HtmlConvert() {
+              string newHtml =  html.Replace("<h1>", " ").Replace("</h1>", " ").Replace("<ul>", " ").Replace("<li>", " ").Replace("</li>", " ").Replace("</ul>", " ");
+                return newHtml;              
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+
+            Console.WriteLine(HtmlConvert());
+
+
+
+
+
+
+
 
             }
 
+
+
+        }
     }
-}
+
     
    
 
