@@ -970,36 +970,59 @@ namespace ConsoleApp2
             //}
 
 
-
             // HTML Converter
 
-             string html = "<h1>Grocery List </h1>\n" +
-                          "<ul>\n" +
-                          "    <li>Eggs</li>\n" +
-                          "    <li>Milk</li>\n" +
-                          "    <li>Butter</li>\n" +
-                          " </ul>";
-          
-              string HtmlConvert() {
-              string newHtml =  html.Replace("<h1>", " ").Replace("</h1>", " ").Replace("<ul>", " ").Replace("<li>", " ").Replace("</li>", " ").Replace("</ul>", " ");
-                return newHtml;              
+            // string html = "<h1>Grocery List </h1>\n" +
+            //              "<ul>\n" +
+            //              "    <li>Eggs</li>\n" +
+            //              "    <li>Milk</li>\n" +
+            //              "    <li>Butter</li>\n" +
+            //              " </ul>";          
+            //  string HtmlConvert() {
+            //  string newHtml =  html.Replace("<h1>", " ").Replace("</h1>", " ").Replace("<ul>", " ").Replace("<li>", " ").Replace("</li>", " ").Replace("</ul>", " ");
+            //    return newHtml;              
+            //}
+            //Console.WriteLine(HtmlConvert());
+
+
+            // Pig Latin Translator
+
+
+            //Console.WriteLine("Enter a line: ");
+            //string response = Console.ReadLine();
+            //response.ToLower();
+            //string PigLatin(string response)
+            //{
+            //    string newResponse = "";
+            //    foreach (string word in response.Split(' ')) {
+            //       if (word.StartsWith("a") || word.StartsWith("e") || word.StartsWith("i") || word.StartsWith("o") || word.StartsWith("u")) {
+            //       newResponse = newResponse + word + "way ";                   
+            //       }
+            //       else newResponse = newResponse + word + " ";
+            //    }
+            //    return newResponse;
+            //}
+
+            //    Console.WriteLine(PigLatin(response));
+
+
+
+
+
+
+
+
+
+
+
             }
-
-            Console.WriteLine(HtmlConvert());
-
-
-
-
-
-
-
-
-            }
-
-
 
         }
+
     }
+
+        
+    
 
     
    
