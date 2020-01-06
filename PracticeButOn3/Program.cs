@@ -17,12 +17,10 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace ConsoleApp2
 {
-    class Program
-    {
+    class Program {
 
 
-        static void Main()
-        {
+        static void Main() {
 
             // Registration Form
 
@@ -989,28 +987,54 @@ namespace ConsoleApp2
 
 
             //Console.WriteLine("Enter a line: ");
-            //string response = Console.ReadLine();
-            //response.ToLower();
-            //string PigLatin(string response)
-            //{
+            //string response = Console.ReadLine().ToLower();
+
+            //string PigLatin(string response) {
             //    string newResponse = "";
-            //    foreach (string word in response.Split(' ')) {
-            //       if (word.StartsWith("a") || word.StartsWith("e") || word.StartsWith("i") || word.StartsWith("o") || word.StartsWith("u")) {
-            //       newResponse = newResponse + word + "way ";                   
-            //       }
-            //       else newResponse = newResponse + word + " ";
+            //    string cons = "";
+            //    string nowResponse = "";
+
+            //    foreach (string word in response.Split(' '))
+            //    {
+
+            //        if (word.StartsWith("a") || word.StartsWith("e") || word.StartsWith("i") || word.StartsWith("o") || word.StartsWith("u"))
+            //        {
+            //            newResponse = newResponse + word + "way ";
+            //            nowResponse = response.Replace(word, newResponse);
+            //        }
+
+            //        if (!word.StartsWith("a") || !word.StartsWith("e") || !word.StartsWith("i") || !word.StartsWith("o") || !word.StartsWith("u"))
+            //        {
+            //            cons =  cons + word + "ay ";
+            //            nowResponse = response.Replace(word, cons);
+            //        }
+
             //    }
-            //    return newResponse;
+            //    return nowResponse;
             //}
+            //Console.WriteLine(PigLatin(response));
 
-            //    Console.WriteLine(PigLatin(response));
+            //Reservation Calculator
 
+            Reservation reservation = new Reservation();
 
+            try { 
+            Console.WriteLine("Enter the arrival month (1 - 12) : ");
+            string month = Console.ReadLine();            
+            Console.WriteLine("Enter the arrival day (1 - 31) : ");
+            string day = Console.ReadLine();
+                if (month.Length < 2 || day.Length < 2) throw new Exception("You must enter 2 digits");
+            Console.WriteLine("Enter the arrival year : ");
+            string year = Console.ReadLine();
+            string date = year + "-" + month + "-" + day;
+            reservation.ArrivalDate = DateTime.Parse(date);
 
+            Console.WriteLine(reservation.ArrivalDate);
 
+        }
 
-
-
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
 
 
 
@@ -1018,8 +1042,18 @@ namespace ConsoleApp2
             }
 
         }
-
     }
+    }
+        
+        
+        
+        
+       
+       
+
+        
+
+    
 
         
     
