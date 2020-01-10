@@ -6,37 +6,55 @@ using System.IO;
 namespace PracticeCsharp {
     public class CountryIO {
 
+        FileStream F = new FileStream("C:\\Users\\maggi\\Source\\Repos\\MurachPracticeProblems\\PracticeButOn3\\CountriesIO\\Countries.txt", FileMode.Open, FileAccess.Read, FileShare.Read);
 
-        public FileStream F = new FileStream("C:\\Users\\maggi\\Source\\Repos\\MurachPracticeProblems\\PracticeButOn3\\CountriesIO\\Countries.txt", FileMode.Open, FileAccess.Read, FileShare.Read);
 
         public List<string> countries = new List<string>();
 
-        public string[] SaveCountries(List<string> countries) {
-            using (var file = new StreamReader("C:\\Users\\maggi\\Source\\Repos\\MurachPracticeProblems\\PracticeButOn3\\CountriesIO\\Countries.txt"))
-            {
-                var line = string.Empty;
+        //public string[] SaveCountries(List<string> countries) {
 
-                while ((line = file.ReadLine()) != null)
+        //    using (var file = new StreamReader("C:\\Users\\maggi\\Source\\Repos\\MurachPracticeProblems\\PracticeButOn3\\CountriesIO\\Countries.txt"))
+        //    {
+        //        var line = string.Empty;
+
+        //        while ((line = file.ReadLine()) != null)
+        //        {
+        //            countries.Add(Convert.ToString(line));
+        //        }
+        //    }
+        //    F.Close();
+
+        //    return (countries.ToArray());
+        //}
+
+        public void AddCountry(string newCountry) {
+
+            using (var file = new StreamWriter("C:\\Users\\maggi\\Source\\Repos\\MurachPracticeProblems\\PracticeButOn3\\CountriesIO\\Countries.txt"))
+                if (file != null)
                 {
-                    countries.Add(Convert.ToString(line));
+                    file.NewLine.
                 }
-            }
-
-            return (countries.ToArray());
+                else file.WriteLine(newCountry);
+            F.Close();
         }
 
 
 
-
-
         public string GetCountries() {
-
-            //print the list
-            foreach (var s in countries)
             {
-              Console.WriteLine(s);
+                using (var file = new StreamReader("C:\\Users\\maggi\\Source\\Repos\\MurachPracticeProblems\\PracticeButOn3\\CountriesIO\\Countries.txt"))
+                {
+                    var line = string.Empty;
+
+                    while ((line = file.ReadLine()) != null)
+                        foreach (var s in countries)
+                        {
+                            Console.WriteLine(s);
+                        }
+                }
+                F.Close();
+                return File.ReadAllText("C:\\Users\\maggi\\Source\\Repos\\MurachPracticeProblems\\PracticeButOn3\\CountriesIO\\Countries.txt");
             }
-            return "";
         }
     }
 }

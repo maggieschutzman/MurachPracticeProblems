@@ -15,10 +15,8 @@ using static PracticeCsharp.Roshambo.Player;
 using static System.Net.Mime.MediaTypeNames;
 
 
-namespace ConsoleApp2
-{
-    class Program
-    {
+namespace ConsoleApp2 {
+    class Program {
 
 
         static void Main() {
@@ -1088,11 +1086,43 @@ namespace ConsoleApp2
             //Country List Manager System.IO ex
 
             CountryIO countryIO = new CountryIO();
-            countryIO.SaveCountries(countryIO.countries);
-            Console.WriteLine(countryIO.GetCountries()) ;
+
+            Console.WriteLine("COMMAND MENU\n1 - List countries\n2 - Add a country\n3 - Exit");
+            string command = Console.ReadLine();
+            try
+            {
+                while (command != "3")
+                {
+                    //if (command != "1" || command != "2" || command != "3")
+                    //    throw new Exception("Not a valid command. Try again.");
+                    switch (command)
+                    {
+                        case "1":
+                            Console.WriteLine(countryIO.GetCountries());
+                            Console.WriteLine("New command?");
+                            command = Console.ReadLine();
+                            break;
+
+                        case "2":
+                            Console.WriteLine("Which country would you like to add?");
+                            string newCountry = Console.ReadLine();
+                            countryIO.AddCountry(newCountry);
+                            Console.WriteLine("New command?");
+                            command = Console.ReadLine();
+                            break;
+
+                        case "3":
+                            Environment.Exit(0);
+                            break;
+                    }
 
 
-
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
