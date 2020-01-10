@@ -984,8 +984,8 @@ namespace ConsoleApp2
             //Console.WriteLine(HtmlConvert());
 
 
-            // Pig Latin Translator
 
+            // Pig Latin Translator
 
             //Console.WriteLine("Enter a line: ");
             //string response = Console.ReadLine().ToLower();
@@ -1019,60 +1019,56 @@ namespace ConsoleApp2
 
             //Reservation Calculator
 
-            Reservation reservation = new Reservation();
-            try
-            {
-                //Arrival
-                Console.WriteLine("Enter the arrival month (1 - 12) : ");
-                string month = Console.ReadLine();
-                if (Convert.ToInt32(month) > 12 || Convert.ToInt32(month) < 0) throw new Exception("You must enter 1 - 12");
+            //Reservation reservation = new Reservation();
+            //try
+            //{
+            //    //Arrival
+            //    Console.WriteLine("Enter the arrival month (1 - 12) : ");
+            //    string month = Console.ReadLine();
+            //    if (Convert.ToInt32(month) > 12 || Convert.ToInt32(month) < 0) throw new Exception("You must enter 1 - 12");
 
-                Console.WriteLine("Enter the arrival day (1 - 31) : ");
-                string day = Console.ReadLine();
-                if (Convert.ToInt32(day) > 31 || Convert.ToInt32(day) < 0) throw new Exception("You must enter 1 - 31");
-                if (month.Length < 2 || day.Length < 2) throw new Exception("You must enter 2 digits");
+            //    Console.WriteLine("Enter the arrival day (1 - 31) : ");
+            //    string day = Console.ReadLine();
+            //    if (Convert.ToInt32(day) > 31 || Convert.ToInt32(day) < 0) throw new Exception("You must enter 1 - 31");
+            //    if (month.Length < 2 || day.Length < 2) throw new Exception("You must enter 2 digits");
 
-                Console.WriteLine("Enter the arrival year : ");
-                string year = Console.ReadLine();
-                if (year.Length < 4) throw new Exception("You must enter 4 digits");
-                string date = year + "-" + month + "-" + day;
-                reservation.SetArrivalDate(DateTime.Parse(date));
-                string arrivalDate = reservation.GetArrivalDateFormatted();
+            //    Console.WriteLine("Enter the arrival year : ");
+            //    string year = Console.ReadLine();
+            //    if (year.Length < 4) throw new Exception("You must enter 4 digits");
+            //    string date = year + "-" + month + "-" + day;
+            //    reservation.SetArrivalDate(DateTime.Parse(date));
+            //    string arrivalDate = reservation.GetArrivalDateFormatted();
 
-                //Departure
-                Console.WriteLine("Enter the Departure Month: ");
-                string depMonth = Console.ReadLine();
-                if (Convert.ToInt32(depMonth) > 12 || Convert.ToInt32(depMonth) < 0) throw new Exception("You must enter 1 - 12");
+            //    //Departure
+            //    Console.WriteLine("Enter the Departure Month: ");
+            //    string depMonth = Console.ReadLine();
+            //    if (Convert.ToInt32(depMonth) > 12 || Convert.ToInt32(depMonth) < 0) throw new Exception("You must enter 1 - 12");
 
-                Console.WriteLine("Enter the Departure Day: ");
-                string depDay = Console.ReadLine();
-                if (Convert.ToInt32(depDay) > 31 || Convert.ToInt32(depDay) < 0) throw new Exception("You must enter 1 - 31");
-                if (depMonth.Length < 2 || depDay.Length < 2) throw new Exception("You must enter 2 digits");
+            //    Console.WriteLine("Enter the Departure Day: ");
+            //    string depDay = Console.ReadLine();
+            //    if (Convert.ToInt32(depDay) > 31 || Convert.ToInt32(depDay) < 0) throw new Exception("You must enter 1 - 31");
+            //    if (depMonth.Length < 2 || depDay.Length < 2) throw new Exception("You must enter 2 digits");
 
-                Console.WriteLine("Enter the Departure year: ");
-                string depYear = Console.ReadLine();
-                if (depYear.Length < 4) throw new Exception("You must enter 4 digits");
-                string depDate = depYear + "-" + depMonth + "-" + depDay;
-                reservation.SetDepartureDate(DateTime.Parse(depDate));
-                string departureDate = reservation.GetDepartureDateFormatted();
+            //    Console.WriteLine("Enter the Departure year: ");
+            //    string depYear = Console.ReadLine();
+            //    if (depYear.Length < 4) throw new Exception("You must enter 4 digits");
+            //    string depDate = depYear + "-" + depMonth + "-" + depDay;
+            //    reservation.SetDepartureDate(DateTime.Parse(depDate));
+            //    string departureDate = reservation.GetDepartureDateFormatted();
 
-                Console.WriteLine($"Arrival Date: {arrivalDate}");
-                Console.WriteLine($"Departure Date: {departureDate}");
-                int nights = reservation.GetNumberofNights();
-                Console.WriteLine($"Number of nights: {nights}");
-                string pricePerNight = reservation.GetPricePerNightFormatted();
-                Console.WriteLine($"Price: {pricePerNight} per night");
-                string total = reservation.GetTotalPriceFormatted();
-                Console.WriteLine($"Total Price: {total}");
-
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-
+            //    Console.WriteLine($"Arrival Date: {arrivalDate}");
+            //    Console.WriteLine($"Departure Date: {departureDate}");
+            //    int nights = reservation.GetNumberofNights();
+            //    Console.WriteLine($"Number of nights: {nights}");
+            //    string pricePerNight = reservation.GetPricePerNightFormatted();
+            //    Console.WriteLine($"Price: {pricePerNight} per night");
+            //    string total = reservation.GetTotalPriceFormatted();
+            //    Console.WriteLine($"Total Price: {total}");
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
 
 
             // Fibonacci Sequence
@@ -1089,8 +1085,11 @@ namespace ConsoleApp2
             //}
 
 
+            //Country List Manager System.IO ex
 
-
+            CountryIO countryIO = new CountryIO();
+            countryIO.SaveCountries(countryIO.countries);
+            Console.WriteLine(countryIO.GetCountries()) ;
 
 
 
