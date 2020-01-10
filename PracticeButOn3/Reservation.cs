@@ -37,7 +37,7 @@ namespace PracticeCsharp
         }
 
         public int GetNumberofNights() {
-            return ArrivalDate.Day - DepartureDate.Day;
+            return  DepartureDate.Day - ArrivalDate.Day;
         }
 
         public string GetPricePerNightFormatted() {
