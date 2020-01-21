@@ -4,11 +4,12 @@ using System.Text;
 
 namespace PracticeCsharp.LengthConverterIO {
     class Conversion {
-        public double FromUnit { get; set; }
+        public string FromUnit { get; set; }
         public double FromValue { get; set; }
-        public double ToUnit { get; set; }
+        public string ToUnit { get; set; }
         public double ToValue { get; set; }
         public double ConversionRatio { get; set; }
+        public string NewConversion { get; set; }
 
         public double milesToKilometers(double FromValue) {
             double ToValue = FromValue * 1.6093;
@@ -31,6 +32,8 @@ namespace PracticeCsharp.LengthConverterIO {
             double ToUnit = FromUnit * .3937;
             return ToUnit;
         }
+
+
 
     }
 }

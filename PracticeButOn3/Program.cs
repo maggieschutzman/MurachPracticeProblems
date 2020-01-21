@@ -1132,38 +1132,62 @@ namespace ConsoleApp2 {
 
             // Length Converter
             Conversion conversion = new Conversion();
+            ConversionMethods conversionMethod = new ConversionMethods();
             Console.WriteLine("1 - Convert a length\n2 - Add a type of conversion\n3 - Delete a type of conversion\n4 - Exit");
             Console.WriteLine("Enter menu number: ");
+
+            conversionMethod.GetConversions();
+
             string command = Console.ReadLine();
-            switch (command) {
+
+            switch (command)
+            {
                 case "1":
-                    Console.WriteLine("1 - Miles to Kilometers: 1.6093\n2 - Kilometers to Miles: .6214\n3- Inches to Centimeters: 2.54");
+                    Console.WriteLine($"The conversions available are : \n" + conversionMethod.GetConversions());
                     Console.WriteLine("Enter conversion number: ");
                     int ans = Convert.ToInt32(Console.ReadLine());
-                    if (ans == 1) {
+                    if (ans == 1)
+                    {
                         Console.WriteLine("Enter Miles: ");
-                        double FromValue= Convert.ToDouble(Console.ReadLine());
+                        double FromValue = Convert.ToDouble(Console.ReadLine());
                         conversion.milesToKilometers(FromValue);
+
                     }
                     if (ans == 2)
                     {
                         Console.WriteLine("Enter Kilometers: ");
                         double FromValue = Convert.ToDouble(Console.ReadLine());
                         conversion.kilometeresToMiles(FromValue);
+
                     }
                     if (ans == 3)
                     {
                         Console.WriteLine("Enter Inches: ");
                         double FromUnit = Convert.ToDouble(Console.ReadLine());
                         conversion.inchesToCentimeters(FromUnit);
+
                     }
 
                     break;
 
                 case "2":
                     Console.WriteLine("Enter 'From' unit: ");
-            
+                    conversion.FromUnit = Console.ReadLine();
+
+                    Console.WriteLine("Enter 'To' unit: ");
+                    conversion.ToUnit = Console.ReadLine();
+
+                    Console.WriteLine("Enter the converstion ratio: ");
+                    conversion.ConversionRatio = Convert.ToDouble(Console.ReadLine());
+                    conversionMethod.SaveConversions(conversion.FromUnit, conversion.ToUnit, conversion.ConversionRatio);
+                    conversionMethod.GetConversions();
+                    break;
             }
+                    
+                    Console.WriteLine("New command?");
+                    command = Console.ReadLine();
+            
+        }
     }
 }
         
