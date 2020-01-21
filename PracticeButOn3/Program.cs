@@ -1085,44 +1085,54 @@ namespace ConsoleApp2 {
 
             //Country List Manager System.IO ex
 
-            CountryIO countryIO = new CountryIO();
+            //CountryIO countryIO = new CountryIO();
+             
+            //Console.WriteLine("COMMAND MENU\n1 - List countries\n2 - Add a country\n3 - Remove\n4 - Exit");
+            //int command = Int32.Parse(Console.ReadLine());
+            //try
+            //{            
+            //          if (command != 1 || command != 2 || command != 3 || command != 4)
+            //            throw new Exception("Not a valid command. Try again.");
 
-            Console.WriteLine("COMMAND MENU\n1 - List countries\n2 - Add a country\n3 - Exit");
-            string command = Console.ReadLine();
-            try
-            {
-                while (command != "3")
-                {
-                    //if (command != "1" || command != "2" || command != "3")
-                    //    throw new Exception("Not a valid command. Try again.");
-                    switch (command)
-                    {
-                        case "1":
-                            Console.WriteLine(countryIO.GetCountries());
-                            Console.WriteLine("New command?");
-                            command = Console.ReadLine();
-                            break;
+            //        switch (command)
+            //        {
+            //            case 1:
+            //                Console.WriteLine(countryIO.GetCountries());
+            //                Console.WriteLine("New command?");
+            //                command = Int32.Parse(Console.ReadLine());
+            //                break;
 
-                        case "2":
-                            Console.WriteLine("Which country would you like to add?");
-                            string newCountry = Console.ReadLine();
-                            countryIO.AddCountry(newCountry);
-                            Console.WriteLine("New command?");
-                            command = Console.ReadLine();
-                            break;
+            //            case 2:
+            //                Console.WriteLine("Which country would you like to add?");
+            //                string newCountry = Console.ReadLine();
+            //                countryIO.AddCountry(newCountry);
+            //                Console.WriteLine("New command?");
+            //                command = Int32.Parse(Console.ReadLine());
+            //                break;
+            //            case 3:
+            //                Console.WriteLine("Which country would you like to delete?");
+            //                string country = Console.ReadLine().ToLower() ;
+            //                countryIO.DeleteCountry(country);
+            //                Console.WriteLine("New command?");
+            //                command = Int32.Parse(Console.ReadLine());
+            //                break;
 
-                        case "3":
-                            Environment.Exit(0);
-                            break;
-                    }
+            //            case 4:
+            //                Environment.Exit(0);
+            //                break;              
+            //    }
+
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
 
 
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+
+
+
+
         }
     }
 }
