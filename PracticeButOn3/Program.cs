@@ -1,5 +1,6 @@
 ﻿using PracticeCsharp;
 using PracticeCsharp.AccountBalance;
+using PracticeCsharp.LengthConverterIO;
 using PracticeCsharp.Roshambo;
 using PracticeCsharp.Students;
 using PracticeCsharp.TicTacToe;
@@ -1086,7 +1087,7 @@ namespace ConsoleApp2 {
             //Country List Manager System.IO ex
 
             //CountryIO countryIO = new CountryIO();
-             
+
             //Console.WriteLine("COMMAND MENU\n1 - List countries\n2 - Add a country\n3 - Remove\n4 - Exit");
             //int command = Int32.Parse(Console.ReadLine());
             //try
@@ -1129,11 +1130,40 @@ namespace ConsoleApp2 {
             //}
 
 
+            // Length Converter
+            Conversion conversion = new Conversion();
+            Console.WriteLine("1 - Convert a length\n2 - Add a type of conversion\n3 - Delete a type of conversion\n4 - Exit");
+            Console.WriteLine("Enter menu number: ");
+            string command = Console.ReadLine();
+            switch (command) {
+                case "1":
+                    Console.WriteLine("1 - Miles to Kilometers: 1.6093\n2 - Kilometers to Miles: .6214\n3- Inches to Centimeters: 2.54");
+                    Console.WriteLine("Enter conversion number: ");
+                    int ans = Convert.ToInt32(Console.ReadLine());
+                    if (ans == 1) {
+                        Console.WriteLine("Enter Miles: ");
+                        double FromValue= Convert.ToDouble(Console.ReadLine());
+                        conversion.milesToKilometers(FromValue);
+                    }
+                    if (ans == 2)
+                    {
+                        Console.WriteLine("Enter Kilometers: ");
+                        double FromValue = Convert.ToDouble(Console.ReadLine());
+                        conversion.kilometeresToMiles(FromValue);
+                    }
+                    if (ans == 3)
+                    {
+                        Console.WriteLine("Enter Inches: ");
+                        double FromUnit = Convert.ToDouble(Console.ReadLine());
+                        conversion.inchesToCentimeters(FromUnit);
+                    }
 
+                    break;
 
-
-
-        }
+                case "2":
+                    Console.WriteLine("Enter 'From' unit: ");
+            
+            }
     }
 }
         
