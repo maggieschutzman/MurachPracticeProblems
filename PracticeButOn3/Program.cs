@@ -986,36 +986,48 @@ namespace ConsoleApp2 {
 
             // Pig Latin Translator
 
-            //Console.WriteLine("Enter a line: ");
-            //string response = Console.ReadLine().ToLower();
 
-            //string PigLatin(string response) {
-            //    string newResponse = "";
-            //    string cons = "";
-            //    string nowResponse = "";
+            Console.WriteLine("Enter a line: ");
+            string response = Console.ReadLine().ToLower();
+            StringBuilder builder = new StringBuilder(response);
 
-            //    foreach (string word in response.Split(' '))
-            //    {
+            string PigLatin(string response) {
+                string newResponse = "";
+                string vowel = "";
+                string constan = "";
+                string cons = "";
+                foreach (string word in response.Split(' '))
+                {
+                    if (word.StartsWith("a") || word.StartsWith("e") || word.StartsWith("i") || word.StartsWith("o") || word.StartsWith("u"))
+                    {
+                        vowel = word;
+                        newResponse = word + "way ";
+                        builder.Replace(word, newResponse);
+                        if (!response.Contains(vowel))
+                        {
+                            builder.Replace(word, "");
+                        }
+                    }
+                    else
+                    if (!word.StartsWith("a") || !word.StartsWith("e") || !word.StartsWith("i") || !word.StartsWith("o") || !word.StartsWith("u"))
+                    {
+                        constan = word;
+                        char[] vow = { 'a', 'e', 'i', 'o', 'u' };
+                        constan.TrimStart(vow);
+                        
 
-            //        if (word.StartsWith("a") || word.StartsWith("e") || word.StartsWith("i") || word.StartsWith("o") || word.StartsWith("u"))
-            //        {
-            //            newResponse = newResponse + word + "way ";
-            //            nowResponse = response.Replace(word, newResponse);
-            //        }
-
-            //        if (!word.StartsWith("a") || !word.StartsWith("e") || !word.StartsWith("i") || !word.StartsWith("o") || !word.StartsWith("u"))
-            //        {
-            //            cons =  cons + word + "ay ";
-            //            nowResponse = response.Replace(word, cons);
-            //        }
-
-            //    }
-            //    return nowResponse;
-            //}
-            //Console.WriteLine(PigLatin(response));
-
-
-
+                        cons = constan+ "ay";
+                        builder.Replace(word, cons);
+                        if (!response.Contains(constan))
+                        {
+                            builder.Replace(word, "");
+                        }
+                    }
+                }
+                return builder.ToString();
+            }
+            Console.WriteLine(PigLatin(response));
+        
             //Reservation Calculator
 
             //Reservation reservation = new Reservation();
@@ -1122,7 +1134,6 @@ namespace ConsoleApp2 {
             //                Environment.Exit(0);
             //                break;              
             //    }
-
             //}
             //catch (Exception e)
             //{
@@ -1131,62 +1142,69 @@ namespace ConsoleApp2 {
 
 
             // Length Converter
-            Conversion conversion = new Conversion();
-            ConversionMethods conversionMethod = new ConversionMethods();
-            Console.WriteLine("1 - Convert a length\n2 - Add a type of conversion\n3 - Delete a type of conversion\n4 - Exit");
-            Console.WriteLine("Enter menu number: ");
 
-            conversionMethod.GetConversions();
 
-            string command = Console.ReadLine();
+            //    Conversion conversion = new Conversion();
+            //    ConversionMethods conversionMethod = new ConversionMethods();
+            //    Console.WriteLine("1 - Convert a length\n2 - Add a type of conversion\n3 - Delete a type of conversion\n4 - Exit");
+            //    Console.WriteLine("Enter menu number: ");
+            //    conversionMethod.GetConversions();
+            //    string command = Console.ReadLine();
+            //    switch (command)
+            //    {
+            //        case "1":
+            //            Console.WriteLine($"The conversions available are : \n" + conversionMethod.GetConversions());
+            //            Console.WriteLine("Enter conversion number: ");
+            //            int ans = Convert.ToInt32(Console.ReadLine());
+            //            if (ans == 1)
+            //            {
+            //                Console.WriteLine("Enter Miles: ");
+            //                double FromValue = Convert.ToDouble(Console.ReadLine());
+            //                conversion.milesToKilometers(FromValue);
+            //            }
+            //            if (ans == 2)
+            //            {
+            //                Console.WriteLine("Enter Kilometers: ");
+            //                double FromValue = Convert.ToDouble(Console.ReadLine());
+            //                conversion.kilometeresToMiles(FromValue);
+            //            }
+            //            if (ans == 3)
+            //            {
+            //                Console.WriteLine("Enter Inches: ");
+            //                double FromUnit = Convert.ToDouble(Console.ReadLine());
+            //                conversion.inchesToCentimeters(FromUnit);
+            //            }
+            //            break;
 
-            switch (command)
-            {
-                case "1":
-                    Console.WriteLine($"The conversions available are : \n" + conversionMethod.GetConversions());
-                    Console.WriteLine("Enter conversion number: ");
-                    int ans = Convert.ToInt32(Console.ReadLine());
-                    if (ans == 1)
-                    {
-                        Console.WriteLine("Enter Miles: ");
-                        double FromValue = Convert.ToDouble(Console.ReadLine());
-                        conversion.milesToKilometers(FromValue);
+            //        case "2":
+            //            Console.WriteLine("Enter 'From' unit: ");
+            //            conversion.FromUnit = Console.ReadLine();
 
-                    }
-                    if (ans == 2)
-                    {
-                        Console.WriteLine("Enter Kilometers: ");
-                        double FromValue = Convert.ToDouble(Console.ReadLine());
-                        conversion.kilometeresToMiles(FromValue);
+            //            Console.WriteLine("Enter 'To' unit: ");
+            //            conversion.ToUnit = Console.ReadLine();
 
-                    }
-                    if (ans == 3)
-                    {
-                        Console.WriteLine("Enter Inches: ");
-                        double FromUnit = Convert.ToDouble(Console.ReadLine());
-                        conversion.inchesToCentimeters(FromUnit);
+            //            Console.WriteLine("Enter the converstion ratio: ");
+            //            conversion.ConversionRatio = Convert.ToDouble(Console.ReadLine());
+            //            conversionMethod.SaveConversions(conversion.FromUnit, conversion.ToUnit, conversion.ConversionRatio);
+            //            conversionMethod.GetConversions();
+            //            break;
+            //    }
 
-                    }
+            //            Console.WriteLine("New command?");
+            //            command = Console.ReadLine();
 
-                    break;
+            //}
 
-                case "2":
-                    Console.WriteLine("Enter 'From' unit: ");
-                    conversion.FromUnit = Console.ReadLine();
 
-                    Console.WriteLine("Enter 'To' unit: ");
-                    conversion.ToUnit = Console.ReadLine();
 
-                    Console.WriteLine("Enter the converstion ratio: ");
-                    conversion.ConversionRatio = Convert.ToDouble(Console.ReadLine());
-                    conversionMethod.SaveConversions(conversion.FromUnit, conversion.ToUnit, conversion.ConversionRatio);
-                    conversionMethod.GetConversions();
-                    break;
-            }
-                    
-                    Console.WriteLine("New command?");
-                    command = Console.ReadLine();
-            
+
+
+
+
+
+
+
+
         }
     }
 }

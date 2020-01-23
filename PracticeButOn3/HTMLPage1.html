@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Right Triangle Calculator</title>
+    <script>
+        function calculate() {
+            var sideA = document.getElementById("sideA").value;
+            var sideB = document.getElementById("sideB").value;
+            var answer =(1/2) * parseFloat(sideA) + parseFloat(sideB);
+            return document.getElementById('sideC').value = answer;
+            }
+    </script>
+</head>
+<body>
+    <h1>Calculate the hypotenuse of a right triange!</h1>
+    <form onsubmit ="return false">
+        Side A: <input type="text" name="sideA" id="sideA" />
+        Side B:<input type="text" name="sideB" id="sideB" />
+        Side C:<input type="text" id="sideC" readonly />
+
+        <button onclick='calculate()'>Calculate</button>
+
+    </form>
+</body>
+</html>
